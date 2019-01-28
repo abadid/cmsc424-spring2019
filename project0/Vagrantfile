@@ -72,8 +72,11 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: <<-SHELL
      apt-get update
      apt-get install -y postgresql postgresql-contrib python python-pip build-essential python-dev python-psycopg2
+     pip install --upgrade pip
      pip install IPython==5.0
-     pip install jupyter
+     pip install --ignore-installed six
      pip install ipython-sql
+     pip install tornado==4.*
+     pip install jupyter
   SHELL
 end

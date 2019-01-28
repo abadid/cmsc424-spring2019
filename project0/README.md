@@ -16,13 +16,14 @@ it supports hosting git repositories, user management, etc. There are other simi
 We will use GitHub to distribute the assignments, and other class materials. Our use of git/github for the class will be minimal.
 
 #### Just Cloning the Class Repository
+
 You don't need a GitHub account for just cloning the class repository. Just install git (on Windows, http://gitforwindows.org/ is helpful) and then run:
 
 `git clone https://github.com/abadid/cmsc424-spring2019.git`
 
-You can do `git pull` (from within the `cmsc424-spring2019` directory) to fetch the newly added material. 
+You can do `git pull` (from within the `cmsc424-spring2019` directory) to fetch the newly added material.
 
-*NOTE*: If you are having trouble installing `git`, you can just download the files instead (as a zipfile), although updating may become tedious. 
+*NOTE*: If you are having trouble installing `git`, you can just download the files instead (as a zipfile), although updating may become tedious.
 
 ---
 
