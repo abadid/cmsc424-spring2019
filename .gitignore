@@ -1,0 +1,14 @@
+# Compiled Python
+*.pyc
+
+# Jupyter caches
+.ipynb_checkpoints/
+
+# Swap files
+*.swp
+
+# Java class files
+*.class
+
+# Vagrant hidden folder
+.vagrant/
