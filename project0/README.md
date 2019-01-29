@@ -136,3 +136,6 @@ This will start a server on the VM, listening on port 8888. We will access it fr
 ---
 
 
+### Setup Demo
+
+[https://youtu.be/FDWvAO33etY](https://youtu.be/FDWvAO33etY)
