@@ -1,3 +1,7 @@
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+
 from itertools import chain, combinations
 
 # A simple Tuple class -- with the only main functionality of retrieving and setting the 
@@ -35,12 +39,12 @@ class Relation:
 		return self
 	def printtuples(self):
 		for t in self.tuples:
-			print t
+			print(t)
 	def prettyprint(self):
-		print "=========================="
-		print "	".join(str(x) for x in self.schema)
+		print("==========================")
+		print("	".join(str(x) for x in self.schema))
 		for t in self.tuples:
-			print "	".join(str(x) for x in t.t)
+			print("	".join(str(x) for x in t.t))
 
     	# Overridden dict class which takes a dict in the form {'a': 2, 'b': 3},
     	# and renders an HTML Table in IPython Notebook.

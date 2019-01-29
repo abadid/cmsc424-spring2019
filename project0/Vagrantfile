@@ -71,12 +71,12 @@ Vagrant.configure("2") do |config|
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
      apt-get update
-     apt-get install -y postgresql postgresql-contrib python python-pip build-essential python-dev python-psycopg2
-     pip install --upgrade pip
-     pip install IPython==5.0
-     pip install --ignore-installed six
-     pip install ipython-sql
-     pip install tornado==4.*
-     pip install jupyter
+     apt-get install -y postgresql postgresql-contrib python3.5 build-essential
+     sudo ln -sf /usr/bin/python3.5 /usr/bin/python3
+     sudo wget https://bootstrap.pypa.io/get-pip.py
+     sudo python3 get-pip.py
+     sudo pip3 install IPython
+     sudo pip3 install jupyter
+     sudo pip3 install ipython-sql psycopg2-binary
   SHELL
 end
