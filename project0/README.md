@@ -68,6 +68,7 @@ Following steps will get you started with creating a database and populating it 
 
 * For our purposes, we will create a user with superuser privileges. 
 	```
+	cd /vagrant/
 	sudo -u postgres createuser -s vagrant
 	```
 
@@ -82,7 +83,7 @@ Following steps will get you started with creating a database and populating it 
 	```
 	psql university
 	```
-	**psql** takes quite a few other options: you can specify different user, a specific port, another server etc. See documentation: http://www.postgresql.org/docs/current/static/app-psql.html
+	**psql** takes quite a few other options: you can specify different user, a specific port, another server etc. See documentation: http://www.postgresql.org/docs/current/static/app-psql.html. Make sure your run the above command from the /vagrant directory for the commands below to work.
 
 * Note: you don't need a password here because PostgreSQL uses what's called `peer authentication` by default. You would typically need a password for other types of connections to the server (e.g., through JDBC).
 
