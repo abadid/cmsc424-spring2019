@@ -129,7 +129,7 @@ IPython is an enhanced command shell for Python, that offers enhanced introspect
 	```
 	jupyter notebook --port=8888 --no-browser --ip=0.0.0.0
 	``` 
-This will start a server on the VM, listening on port 8888. We will access it from the **host** (as discussed above, the VagrantFile maps the 8888 port on the guest VM to the 8888 port on the host VM). To do that, simply start the browser, and point it to: http://127.0.0.1:8888
+This will start a server on the VM, listening on port 8888. We will access it from the **host** (as discussed above, the VagrantFile maps the 8888 port on the guest VM to the 8888 port on the host VM). To do that, simply start the browser, and point it to: http://127.0.0.1:8888. It will ask you for a password or token. Copy the token from the command line output that was output to your screen when you started jupyter above. (In other words, copy everything after ?token=)
 
 * You should see the Notebooks in the `project0/` directory. Click to open the "IPython Getting Started" Notebook, and follow the instruction therein.
 
