@@ -64,7 +64,7 @@ Following steps will get you started with creating a database and populating it 
 
 * PostgreSQL server has a default superuser called **postgres**. You can do everything under that username, or you can create a different username for yourself. If you run a command (say `createdb`) without any options, it uses the same username that you are logged in under (i.e., `vagrant`). However, if you haven't created a PostgreSQL user with that name, the command will fail. You can either create a user (by logging in as the superuser), or run everything as a superuser (typically with the option: **-U postgres**).
 
-* ssh into your vm by running: `vagrant ssh` (if you don't see a prompt, try instead: `VAGRANT_PREFER_SYSTEM_BIN=1 vagrant ssh`
+* ssh into your vm by running: `vagrant ssh` (if you don't see a prompt, try instead: `VAGRANT_PREFER_SYSTEM_BIN=1 vagrant ssh`)
 
 * For our purposes, we will create a user with superuser privileges. 
 	```
