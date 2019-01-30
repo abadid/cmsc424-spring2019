@@ -51,7 +51,7 @@ You can do `git pull` (from within the `cmsc424-spring2019` directory) to fetch 
 PostgreSQL is a full-fledged and powerful relational database system, and will be used for several assignments. 
 
 PostgreSQL is already installed on your virtual machine. To get started, start the virtual machine using `vagrant up`. 
-The current version of PostgreSQL is 10.1. However, the version installed on the VMs is 9.3.20, the one available through `apt-get` right now. You will find the detailed documentation at: https://www.postgresql.org/docs/9.3/static/index.html. 
+The current version of PostgreSQL is 10.1. However, the version installed on the VMs is 9.3.24, the one available through `apt-get` right now. You will find the detailed documentation at: https://www.postgresql.org/docs/9.3/static/index.html. 
 
 Following steps will get you started with creating a database and populating it with the `University` dataset provided on the book website: http://www.db-book.com
 
