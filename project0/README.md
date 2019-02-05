@@ -52,7 +52,7 @@ You can do `git pull` (from within the `cmsc424-spring2019` directory) to fetch 
 PostgreSQL is a full-fledged and powerful relational database system, and will be used for several assignments. 
 
 PostgreSQL is already installed on your virtual machine. To get started, start the virtual machine using `vagrant up`. 
-The current version of PostgreSQL is 10.1. However, the version installed on the VMs is 9.3.20, the one available through `apt-get` right now. You will find the detailed documentation at: https://www.postgresql.org/docs/9.3/static/index.html. 
+The current version of PostgreSQL is 10.1. However, the version installed on the VMs is 9.3.24, the one available through `apt-get` right now. You will find the detailed documentation at: https://www.postgresql.org/docs/9.3/static/index.html. 
 
 Following steps will get you started with creating a database and populating it with the `University` dataset provided on the book website: http://www.db-book.com
 
@@ -64,6 +64,8 @@ Following steps will get you started with creating a database and populating it 
    server: [Creating a database cluster](http://www.postgresql.org/docs/current/static/creating-cluster.html) and [Starting the server](http://www.postgresql.org/docs/current/static/server-start.html)
 
 * PostgreSQL server has a default superuser called **postgres**. You can do everything under that username, or you can create a different username for yourself. If you run a command (say `createdb`) without any options, it uses the same username that you are logged in under (i.e., `vagrant`). However, if you haven't created a PostgreSQL user with that name, the command will fail. You can either create a user (by logging in as the superuser), or run everything as a superuser (typically with the option: **-U postgres**).
+
+* ssh into your vm by running: `vagrant ssh` (if you don't see a prompt, try instead: `VAGRANT_PREFER_SYSTEM_BIN=1 vagrant ssh`)
 
 * For our purposes, we will create a user with superuser privileges. 
 	```
@@ -79,9 +81,10 @@ Following steps will get you started with creating a database and populating it 
 	```
 * Once the database is created, you can connect to it. There are many ways to connect to the server. The easiest is to use the commandline tool called **psql**. Start it by:
 	```
+	cd /vagrant/
 	psql university
 	```
-	**psql** takes quite a few other options: you can specify different user, a specific port, another server etc. See documentation: http://www.postgresql.org/docs/current/static/app-psql.html
+	**psql** takes quite a few other options: you can specify different user, a specific port, another server etc. See documentation: http://www.postgresql.org/docs/current/static/app-psql.html. Make sure your run the above command from the /vagrant directory for the commands below to work.
 
 * Note: you don't need a password here because PostgreSQL uses what's called `peer authentication` by default. You would typically need a password for other types of connections to the server (e.g., through JDBC).
 
@@ -127,7 +130,7 @@ IPython is an enhanced command shell for Python, that offers enhanced introspect
 	```
 	jupyter notebook --port=8888 --no-browser --ip=0.0.0.0
 	``` 
-This will start a server on the VM, listening on port 8888. We will access it from the **host** (as discussed above, the VagrantFile maps the 8888 port on the guest VM to the 8888 port on the host VM). To do that, simply start the browser, and point it to: http://127.0.0.1:8888
+This will start a server on the VM, listening on port 8888. We will access it from the **host** (as discussed above, the VagrantFile maps the 8888 port on the guest VM to the 8888 port on the host VM). To do that, simply start the browser, and point it to: http://127.0.0.1:8888. It will ask you for a password or token. Copy the token from the command line output that was output to your screen when you started jupyter above. (In other words, copy everything after ?token=)
 
 * You should see the Notebooks in the `project0/` directory. Click to open the "IPython Getting Started" Notebook, and follow the instruction therein.
 
