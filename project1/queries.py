@@ -100,7 +100,7 @@ queries[9] = """
 ### A customer needs at least 5 flights to be considered for the ranking
 ### Output: (customer_name, rank)
 ### Order: by the ascending rank, then name
-### Note: a) If two customers tie, then they should both get the same rank, and the next rank should be skipped. For example, if the top two flights have the same average number of customers, then there should be no rank 2, e.g., 1, 1, 3 ...
+### Note: a) If two customers tie, then they should both get the same rank, and the next rank should be skipped. For example, if the top two customers have the same ratio, then there should be no rank 2, e.g., 1, 1, 3 ...
 ###       b) This means there may be more than 20 customers in this ranking, so long as their ranks are under 20. This may occur if there are 10 at rank 15, etc.
 queries[10] = """
 
