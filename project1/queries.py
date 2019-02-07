@@ -10,7 +10,7 @@ order by city;
 """
 
 ### 1. Write a query to find the names of customers who have flights on a wednesday and first name that has a second letter of 'h',
-###    and do not include the youngest customer in the results.
+###    and do not include the youngest customer who fits those criteria in the results.
 ### Hint:  - See postgresql date operators and string functions
 ###        - You may want to use a self-join to avoid including the youngest customer.
 ###        - When testing, write a query that includes all customers, then modify that to exclude the youngest.
