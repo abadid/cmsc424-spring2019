@@ -34,10 +34,8 @@ The dataset was generated synthetically: the airport ids and the cities were cho
 - For every flight from city A to city B, there is corresponding return flight from B to A.
 - The "flewon" table only contains the flight date -- the flight times must be extracted from the flights table.
 
-In many cases (especially for complex queries or queries involving 
-`max` or `min`), you will find it easier to create temporary tables
-using the `with` construct. This also allows you to break down the full
-query and makes it easier to debug.
+This assignment invovles writing SQL queries over this dataset.  In many cases (especially for complex queries or queries involving 
+`max` or `min`), you may find it helpful to use the `with` construct in order to break down your solution into less complex parts. This also will make debugging easier.
 
 You don't have to use the "hints" if you don't want to; there might 
 be simpler ways to solve the questions.
