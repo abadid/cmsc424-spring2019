@@ -37,6 +37,12 @@ The dataset was generated synthetically: the airport ids and the cities were cho
 This assignment invovles writing SQL queries over this dataset.  In many cases (especially for complex queries or queries involving 
 `max` or `min`), you may find it helpful to use the `with` construct in order to break down your solution into less complex parts. This also will make debugging easier.
 
+Some of the queries require you to use string or date functions that were not in the assigned reading from your textbook. This will enable you to get some experience using DB documentation to help you to write queries. Some helpful links:
+
+PostgreSQL date functions: https://www.postgresql.org/docs/9.1/functions-datetime.html
+PostgreSQL string functions: https://www.postgresql.org/docs/9.1/functions-string.html
+How to cast data types in PostgreSQL: http://www.postgresqltutorial.com/postgresql-cast/
+
 You don't have to use the "hints" if you don't want to; there might 
 be simpler ways to solve the questions.
 
