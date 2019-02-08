@@ -41,7 +41,7 @@ You don't have to use the "hints" if you don't want to; there might
 be simpler ways to solve the questions.
 
 ### Testing and submitting using SQLTesting.py
-The queries that we want you to write can be found as comments on the `queries.py` file. Your answers (i.e., SQL queries) should be added to this same `queries.py` file. A simple query is provided for the first answer to show you how it works.
+The queries that we want you to write can be found as comments in the `queries.py` file. Your answers (i.e., SQL queries) should be added to this same `queries.py` file. A simple query is provided for the first answer to show you how it works.
 You are also provided with a Python file `SQLTesting.py` for testing your answers.
 
 - We recommend that you use `psql` to design your queries, and then paste the queries to the `queries.py` file, and confirm it works.
