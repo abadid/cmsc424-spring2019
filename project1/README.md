@@ -14,9 +14,7 @@ The following assumes you have gone through PostgreSQL instructions from Project
 **Note:** We will test your queries on a different, larger dataset. 
 
 ### Getting started
-Start the VM with `vagrant up` in the `project1/` directory. The database should already be set up, but if not: 
-- Create a new database called `flights` and switch to it (see the PostgreSQL setup instructions).
-- Run `\i small.sql` to create and populate the tables. 
+Start the VM with `vagrant up` in the `project1/` directory. The 'flights' database should already be set up, but if not, see a TA. ssh into your VM.
 
 ### Schema 
 The dataset contains synthetic air flight data. Specifically it contains the following tables:
