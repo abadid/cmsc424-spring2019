@@ -2,8 +2,7 @@
 
 *The assignment is to be done by yourself.*
 
-The following assumes you have gone through PostgreSQL instructions and have ran some queries on the `university` database. 
-It also assumed you have cloned the git repository, and have done a `git pull` to download the directory `project1`. The files are:
+The following assumes you have gone through PostgreSQL instructions from Project 0 and have ran some queries on the `university` database. It also assumes you have cloned the git repository, and have done a `git pull` to download the directory `project1`. The files are:
 
 1. README.md: This file
 1. small.sql: The SQL script for creating the data.
