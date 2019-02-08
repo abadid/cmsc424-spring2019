@@ -13,7 +13,7 @@ order by city;
 ###    and do not include the youngest customer who fits those criteria in the results.
 ### Hint:  - See postgresql date operators and string functions that are linked to from the README
 ###        - You can avoid including the youngest customer by joining the customers table with itself (can you figure out the join predicate?).
-###        - When testing, write a query that includes all customers, then modify that to exclude the youngest.
+###        - Try attacking this problem in parts. First, write a query that includes all customers, then modify that query to exclude the youngest.
 ### Order: by name
 ### Output columns: name
 queries[1] = """
