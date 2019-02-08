@@ -9,7 +9,7 @@ The following assumes you have gone through PostgreSQL instructions from Project
 1. queries.py: The file where to enter your answer; this is the file to be submitted
 1. answers.py: The answers to the queries on the small dataset.
 1. SQLTesting.py: File to be used for testing your submission -- see below
-1. Vagrantfile: A Vagrantfile that creates the 'flights' database and populates it using `populate-small.sql` file.
+1. Vagrantfile: A Vagrantfile that creates the 'flights' database and populates it using the `small.sql` file.
 
 **Note:** We will test your queries on a different, larger dataset. 
 
