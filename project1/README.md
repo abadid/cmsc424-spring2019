@@ -11,7 +11,7 @@ The following assumes you have gone through PostgreSQL instructions from Project
 1. SQLTesting.py: File to be used for testing your submission -- see below
 1. Vagrantfile: A Vagrantfile that creates the 'flights' database and populates it using `populate-small.sql` file.
 
-**Note:** The testing will be done on a different, larger dataset. 
+**Note:** We will test your queries on a different, larger dataset. 
 
 ### Getting started
 Start the VM with `vagrant up` in the `project1/` directory. The database should already be set up, but if not: 
