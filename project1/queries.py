@@ -12,8 +12,9 @@ order by city;
 ### 1. Write a query to find the names of customers who have flights on a wednesday and first name that has a second letter of 'h',
 ###    and do not include the youngest customer who fits those criteria in the results.
 ### Hint:  - See postgresql date operators that are linked to from the README, and the "like" operator that you saw already in the assigned reading in your textbook.
-###        - You can avoid including the youngest customer by joining the customers table with itself (can you figure out the join predicate?).
-###        - Try attacking this problem in parts. First, write a query that includes all customers, then modify that query to exclude the youngest.
+###        - Try attacking this problem in parts. First, write a query that includes all customers who have flights on a wednesday and first name that has a second letter of 'h'. Make sure you get that to work.
+###        - Then, put that query into a temporary relation via the with clause (see section 3.8.6 of your textbook). Make sure your temporary relation includes the birthdays of these customers.
+###        - You can avoid including the youngest customer by joining this temporary table with itself (can you figure out the join predicate?). You may also need to include the 'distinct' keyword in your query.
 ### Order: by name
 ### Output columns: name
 queries[1] = """
