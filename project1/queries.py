@@ -98,7 +98,7 @@ queries[9] = """
 
 ### 10. Provide a top-20 ranking of the most loyal frequent fliers.
 ### We rank these fliers by the ratio of flights that they take that are with their frequentflieron airline. The customer with the highest ratio of (flights with frequentflieron) / total flights is rank 1, and so on.
-### A customer needs at least 5 flights to be considered for the ranking
+### A customer needs more than 5 flights to be considered for the ranking
 ### Output: (customer_name, rank)
 ### Order: by the ascending rank, then name
 ### Note: a) If two customers tie, then they should both get the same rank, and the next rank should be skipped. For example, if the top two customers have the same ratio, then there should be no rank 2, e.g., 1, 1, 3 ...
