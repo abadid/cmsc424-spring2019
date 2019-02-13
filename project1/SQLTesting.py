@@ -5,6 +5,7 @@ import datetime
 from collections import Counter
 from types import *
 import argparse
+import copy
 
 from queries import *
 from answers import *
@@ -30,7 +31,7 @@ def match(x, y):
 	# print "Found type: {}".format(type(x))
 	return str(x).strip() == str(y).strip()
 
-def compareAnswers(ans, correct):
+def compareAnswers(ans, correct,ten):
 	# Special case empty answer
 	if len(ans) == 0:
 		if len(correct) == 0:
@@ -48,12 +49,22 @@ def compareAnswers(ans, correct):
 
 	# If the number of rows in the answer is the same, check for near-exact match
 	if len(ans) == len(correct):
-		c = Counter()
-		for (t1, t2) in zip(ans, correct):
-			for (t1x, t2x) in zip(t1, t2):
-				c[match(t1x, t2x)] += 1
-		if c[False] == 0:
-			return ("Score = 4: Exact or Near-exact Match", 4)
+		if ten:
+			correctCopy = copy.deepcopy(correct)
+			for x in ans:
+				try:
+					correctCopy.remove(x)
+				except:
+					break
+			if(len(correctCopy) == 0):
+				return ("Score = 4: Exact or Near-exact Match", 4)
+		else:
+			c = Counter()
+			for (t1, t2) in zip(ans, correct):
+				for (t1x, t2x) in zip(t1, t2):
+					c[match(t1x, t2x)] += 1
+			if c[False] == 0:
+				return ("Score = 4: Exact or Near-exact Match", 4)
 
 	# Let's try to do an approximate match
 	flattened_ans = Counter([str(x).strip() for y in ans for x in y])
@@ -98,7 +109,7 @@ for i in range(1, 11):
 					print (t)
 
 			# Compare with correctanswers[i]
-			cmp_res = compareAnswers(ans, correctanswers[i])
+			cmp_res = compareAnswers(ans, correctanswers[i], i==10)
 			print ("-----> " + cmp_res[0])
 			totalscore += cmp_res[1]
 			if interactive:
