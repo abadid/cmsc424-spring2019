@@ -57,7 +57,15 @@ def compareAnswers(ans, correct,ten):
 				except:
 					break
 			if(len(correctCopy) == 0):
-				return ("Score = 4: Exact or Near-exact Match", 4)
+				lastRank = 1
+				good = True
+				# see if order is good
+				for (name, rank) in ans:
+					if(rank < lastRank):
+						good = False
+					lastRank = rank
+				if good:
+					return ("Score = 4: Exact or Near-exact Match", 4)
 		else:
 			c = Counter()
 			for (t1, t2) in zip(ans, correct):
