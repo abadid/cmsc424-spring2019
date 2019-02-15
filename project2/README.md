@@ -279,9 +279,8 @@ Lastly let's say Betty becomes a South West frequent flier in addition to her Un
 
 Note: We updated Betty's frequentflieron airline.  This may not always happen.  By looking at the `flewon` table (not shown here) we saw that Betty flew on more SW flights than UA flights so we updated her frequentflieron.  If we had found that she had flown on more UA flights than SW flights then there would be no changes in the `customers` table.  
 
-Switch to the `flighttrigger` database and execute `\i trigger-database.sql` The trigger code should be submitted in `trigger.sql` file. Running `psql -f trigger.sql flighttrigger` should generate the trigger without errors.
+Switch to the `flighttrigger` database (i.e. exit out of the flights database and run `psql flighttrigger`). Execute `\i trigger-database.sql` The trigger code should be submitted in `trigger.sql` file. Running `psql -f trigger.sql flighttrigger` should generate the trigger without errors.
 
 You may also use `trigger-test.py`, in which case you do not need to execute `psql -f trigger.sql flighttrigger` (it is included in the script). You can run the test script as `python trigger-test.py trigger.sql`. A few transactions to the `newcustomers` and `ffairlines` table are also provided. You are free to add more transactions for purposes of testing your trigger code. If you are going to run it multiple times, you need to `dropdb flights` then `createdb flights` before every run (no easy way to clear all the functions and triggers otherwise).
 
-In the following link, you’ll find some useful trigger examples. You can also use the example from class on Feb 21 to get started:
-https://www.postgresql.org/docs/9.2/static/plpgsql-trigger.html
+In the following link, you’ll find some useful trigger examples. https://www.postgresql.org/docs/9.2/static/plpgsql-trigger.html
