@@ -6,17 +6,16 @@ Please do a `git pull` to download the directory `project2`. The files are:
 
 1. README.md: This file
 1. small.sql: SQL script for populating `flights` database.
-1. queries.py: The file where to enter your answer for Q1; this file has to be submitted
-1. answers.py: The answers to query Q1 and Q3.
-1. answers.txt: The answers to queries Q2 and Q3.
+1. queries.py: The file where to enter your answers for Q1 and Q2; this file has to be submitted
+1. answers.py: The answers to query Q1 and Q2.
+1. answers.txt: Put your answer to Q3 here; this file has to be submitted.
 1. SQLTesting.py: File to be used for testing your SQL submission -- see below 
-1. table4storedproc.sql: SQL script for populating `stpc` database.
-1. trigger-database.sql: SQL script for setting up the `flightsales` database.
+1. trigger-database.sql: SQL script for setting up the `flighttrigger` database.
 1. trigger-test.py: Python script for testing the trigger.
 1. Vagrantfile: Vagrantfile that creates the required databases and populates some of them.
 
 ### Getting started
-Start the VM with `vagrant up` in the `project2/` directory. The databases `flights` and `stpc` should already be set up. The `flightsales` database is already created for you, but you need to populate it explicitly. 
+Start the VM with `vagrant up` in the `project2/` directory. The database `flights` should already be set up. The `flightstrigger` database is already created for you, but you need to populate it explicitly. 
 
 ### Testing and submitting using SQLTesting.py
 - Your answers (i.e., SQL queries) should be added to the `queries.py` file similar to Project 1. You are also provided with a Python file `SQLTesting.py` for testing your answers.
@@ -89,7 +88,7 @@ having count(*)=1
 order by cid;
 ```
 
-Does the query always produce the correct output? Explain. If not, modify the above query to produce the correct output. If you modify the query, you can only change the having clause. Right now it says: `having count(*)= 1`. You can change it to say: `having count(*) = 1 AND exists (<write your expression here>)`. You cannot change any other part of the query.
+Does the query work for all cases? Explain. If not, modify the above query to produce the correct output. If you modify the query, you can only change the having clause. Right now it says: `having count(*)= 1`. You can change it to say: `having count(*) = 1 AND exists (<write your expression here>)`. You cannot change any other part of the query.
 
 
 
@@ -107,11 +106,13 @@ You need to write triggers that do the following:
 1. Whenever an app inserts/updates/deletes data into the `customers` table, a trigger is fired that does the same corresponding action for the copy of the data in the `newcustomers` and `ffairline` tables.
 1. Whenever an app inserts/updates/deletes data into the `newcustomers` table, a trigger is fired that does the same corresponding action for the copy of the data in the `customers` table. The value of the `frequentflieron` column in the `customers` table is the most frequently travelled airline for that customer (based on the record in the `flewon` table) that is one of the frequent flier airlines for that customer as listed in the new `ffairline` table (or null if there are no frequent flier airlines for that customer). In the case of a tie, the one that is smallest lexicographically is chosen. 
 1. We also need a trigger on the new `ffairline` table to update the value of the ffairline column of the old customers table if the value should change as a result of the update to the ffairline table.
-1. Since the flewon table can effect the choice of which airline should be listed as the `frequentflieron` value in the old customers table, we also need a trigger on the flewon table if as as result of the insert/update/delete to the table, the `frequentflieron` value needs to be changed in the old customers table. 
+1. Since the flewon table can affect the choice of which airline should be listed as the `frequentflieron` value in the old customers table, we also need a trigger on the flewon table if as as result of the insert/update/delete to the table, the `frequentflieron` value needs to be changed in the old customers table. 
 
 Here's an example (`flewon` table not shown):
 
 Initially our database looks like this
+
+`customers`
 
 | customerid | name | birthdate | frequentflieron |
 | :---: | :---: | :---: | :---: |
@@ -121,7 +122,7 @@ Initially our database looks like this
 | cust36 | Daniel Baker | 1998-05-27 | SW |
 | cust82 | Edward Edwards | 1984-07-15 | DL |
 
-`customers`
+`newcustomers`
 
 | customerid | name | birthdate |
 | :---: | :---: | :---: | 
@@ -131,7 +132,7 @@ Initially our database looks like this
 | cust36 | Daniel Baker | 1998-05-27 | 
 | cust82 | Edward Edwards | 1984-07-15 |
 
-`newcustomers`
+`ffairlines`
 
 | customerid | airlineid |
 |:---:|:---:| 
@@ -141,10 +142,10 @@ Initially our database looks like this
 | cust36 | SW |
 | cust82 | DL |
 
-`ffairlines`
-
 
 First, let's delete `(cust82, Edward Edwards, 1984-07-15, DL )` from `customers`, we then have:
+
+`customers`
 
 | customerid | name | birthdate | frequentflieron |
 | :---: | :---: | :---: | :---: |
@@ -153,7 +154,7 @@ First, let's delete `(cust82, Edward Edwards, 1984-07-15, DL )` from `customers`
 | cust24 | Carol Clark | 1984-08-24 | DL |
 | cust36 | Daniel Baker | 1998-05-27 | SW |
 
-`customers`
+`newcustomers`
 
 | customerid | name | birthdate |
 | :---: | :---: | :---: | 
@@ -162,7 +163,7 @@ First, let's delete `(cust82, Edward Edwards, 1984-07-15, DL )` from `customers`
 | cust24 | Carol Clark | 1984-08-24 | 
 | cust36 | Daniel Baker | 1998-05-27 | 
 
-`newcustomers`
+`ffairlines`
 
 | customerid | airlineid |
 |:---:|:---:| 
@@ -171,10 +172,10 @@ First, let's delete `(cust82, Edward Edwards, 1984-07-15, DL )` from `customers`
 | cust24 | DL |
 | cust36 | SW |
 
-`ffairlines`
 
 Next let's insert `(cust102, George Gonzalez, 1996-01-30)` into `newcustomers`, we then have:
 
+`customers`
 
 | customerid | name | birthdate | frequentflieron |
 | :---: | :---: | :---: | :---: |
@@ -184,7 +185,7 @@ Next let's insert `(cust102, George Gonzalez, 1996-01-30)` into `newcustomers`, 
 | cust36 | Daniel Baker | 1998-05-27 | SW |
 | cust102 | George Gonzalez | 1996-01-30 |  |
 
-`customers`
+`newcustomers`
 
 | customerid | name | birthdate |
 | :---: | :---: | :---: | 
@@ -194,8 +195,7 @@ Next let's insert `(cust102, George Gonzalez, 1996-01-30)` into `newcustomers`, 
 | cust36 | Daniel Baker | 1998-05-27 | 
 | cust102 | George Gonzalez | 1996-01-30 |
 
-
-`newcustomers`
+`ffairlines`
 
 | customerid | airlineid |
 |:---:|:---:| 
@@ -204,11 +204,12 @@ Next let's insert `(cust102, George Gonzalez, 1996-01-30)` into `newcustomers`, 
 | cust24 | DL |
 | cust36 | SW |
 
-`ffairlines`
 
 Note: George's frequentflieron column is null in `customers` because we inserted his info into the `newcustomers` table but didn't add any entries in `ffairlines`.
 
 Next let's assume that George takes a lot of flights on Delta so he decides to become a `DL` frequent flier. So we add (cust102, DL) to `ffairlines`. Our table looks like:
+
+`customers`
 
 | customerid | name | birthdate | frequentflieron |
 | :---: | :---: | :---: | :---: |
@@ -218,7 +219,7 @@ Next let's assume that George takes a lot of flights on Delta so he decides to b
 | cust36 | Daniel Baker | 1998-05-27 | SW |
 | cust102 | George Gonzalez | 1996-01-30 | DL |
 
-`customers`
+`newcustomers`
 
 | customerid | name | birthdate |
 | :---: | :---: | :---: | 
@@ -228,7 +229,7 @@ Next let's assume that George takes a lot of flights on Delta so he decides to b
 | cust36 | Daniel Baker | 1998-05-27 | 
 | cust102 | George Gonzalez | 1996-01-30 |
 
-`newcustomers`
+`ffairlines`
 
 | customerid | airlineid |
 |:---:|:---:| 
@@ -238,11 +239,12 @@ Next let's assume that George takes a lot of flights on Delta so he decides to b
 | cust36 | SW |
 | cust102 | DL |
 
-`ffairlines`
 
 Note: We added DL as George's frequent flier airline because it is his most flown airline in the flewon table.
 
 Lastly let's say Betty becomes a South West frequent flier in addition to her United Airlines frequent flier membership.  So we insert (cust12, SW) into `ffairlines`. Our tables look like:
+
+`customers`
 
 | customerid | name | birthdate | frequentflieron |
 | :---: | :---: | :---: | :---: |
@@ -252,7 +254,7 @@ Lastly let's say Betty becomes a South West frequent flier in addition to her Un
 | cust36 | Daniel Baker | 1998-05-27 | SW |
 | cust102 | George Gonzalez | 1996-01-30 | DL |
 
-`customers`
+`newcustomers`
 
 | customerid | name | birthdate |
 | :---: | :---: | :---: | 
@@ -262,7 +264,7 @@ Lastly let's say Betty becomes a South West frequent flier in addition to her Un
 | cust36 | Daniel Baker | 1998-05-27 | 
 | cust102 | George Gonzalez | 1996-01-30 |
 
-`newcustomers`
+`ffairlines`
 
 | customerid | airlineid |
 |:---:|:---:| 
@@ -273,12 +275,11 @@ Lastly let's say Betty becomes a South West frequent flier in addition to her Un
 | cust102 | DL |
 | cust12 | SW |
 
-`ffairlines`
 
 Note: We updated Betty's frequentflieron airline.  This may not always happen.  By looking at the `flewon` table (not shown here) we saw that Betty flew on more SW flights than UA flights so we updated her frequentflieron.  If we had found that she had flown on more UA flights than SW flights then there would be no changes in the `customers` table.  
 
 Switch to the `flighttrigger` database (i.e. exit out of the flights database and run `psql flighttrigger`). Execute `\i trigger-database.sql` The trigger code should be submitted in `trigger.sql` file. Running `psql -f trigger.sql flighttrigger` should generate the trigger without errors.
 
-You may also use `trigger-test.py`, in which case you do not need to execute `psql -f trigger.sql flighttrigger` (it is included in the script). You can run the test script as `python trigger-test.py trigger.sql`. A few transactions to the `newcustomers` and `ffairlines` table are also provided. You are free to add more transactions for purposes of testing your trigger code. If you are going to run it multiple times, you need to `dropdb flights` then `createdb flights` before every run (no easy way to clear all the functions and triggers otherwise).
+You may also use `trigger-test.py`, in which case you do not need to execute `psql -f trigger.sql flighttrigger` (it is included in the script). You can run the test script as `python trigger-test.py trigger.sql`. A few transactions to the `newcustomers` and `ffairlines` table are also provided. You are free to add more transactions for purposes of testing your trigger code. If you are going to run it multiple times, you need to `dropdb flighttrigger` then `createdb flighttrigger` before every run (no easy way to clear all the functions and triggers otherwise).
 
 In the following link, you’ll find some useful trigger examples. https://www.postgresql.org/docs/9.2/static/plpgsql-trigger.html

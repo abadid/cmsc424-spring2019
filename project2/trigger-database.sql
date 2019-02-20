@@ -19,12 +19,10 @@ insert into airports(name, city, airportid, total2011, total2012) values('Denver
 insert into airports(name, city, airportid, total2011, total2012) values('John F Kennedy International','New York','JFK',49291765,47644060);
 
 
-
-
 create table airlines (airlineid char(2) primary key, name char(20), hub char(3) references airports(airportid));
 create table customers (customerid char(10) primary key, name char(30), birthdate date, frequentflieron char(2) references airlines(airlineid));
 create table flights (flightid char(6) primary key, source char(3) references airports(airportid), dest char(3) references airports(airportid), airlineid char(2) references airlines(airlineid), local_departing_time time, local_arrival_time time);
-create table flewon (flightid char(6) references flights(flightid), customerid char(10) references customers, flightdate date);
+create table flewon (flightid char(6) references flights(flightid), customerid char(10) references customers ON DELETE CASCADE, flightdate date);
 insert into airlines values ('SW', 'Southwest Airlines', 'OAK');
 insert into airlines values ('AA', 'American Airlines', 'DFW');
 insert into airlines values ('DL', 'Delta Airlines', 'ATL');
@@ -34,7 +32,6 @@ insert into customers values ('cust0', 'Anthony Allen', to_date('1985-05-14', 'y
 insert into customers values ('cust15', 'Betty Gonzalez', to_date('1993-12-28', 'yyyy-mm-dd'), 'SW');
 insert into customers values ('cust33', 'Christopher Davis', to_date('1984-05-13', 'yyyy-mm-dd'), 'DL');
 insert into customers values ('cust109', 'James Adams', to_date('1994-05-22', 'yyyy-mm-dd'), 'AA');
-
 
 insert into flights values('UA101', 'BOS', 'FLL', 'UA', time '00:00' + interval '60 minutes', time '00:00' + interval '189 minutes');
 insert into flights values('UA180', 'FLL', 'BOS', 'UA', time '00:00' + interval '236 minutes', time '00:00' + interval '365 minutes');
@@ -160,5 +157,5 @@ insert into flewon values ('DL119', 'cust33', to_date('2016-08-02', 'YYYY-MM-DD'
 create table newcustomers (customerid char(10) primary key, name char(30), birthdate date);
 insert into newcustomers (select customerid, name, birthdate from customers);
 
-create table ffairlines (customerid char(10) references newcustomers, airlineid char(2) references airlines(airlineid));
+create table ffairlines (customerid char(10) references newcustomers ON DELETE CASCADE, airlineid char(2) references airlines(airlineid));
 insert into ffairlines(customerid, airlineid) (select customerid, frequentflieron from customers);
