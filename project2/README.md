@@ -88,7 +88,9 @@ having count(*)=1
 order by cid;
 ```
 
-Does the query work for all cases? Explain. If not, modify the above query to produce the correct output. If you modify the query, you can only change the having clause. Right now it says: `having count(*)= 1`. You can change it to say: `having count(*) = 1 AND exists (<write your expression here>)`. You cannot change any other part of the query.
+Why doesn't this query work for all cases? Explain. 
+
+Modify the above query to produce the correct output. You can only change the having clause. Right now it says: `having count(*)= 1`. You must change it to say: `having count(*) = 1 AND exists (<write your expression here>)`. You cannot change any other part of the query. To repeat: you cannot change any other part of the query and you only change the part where it says (<write your expression here>).
 
 
 
