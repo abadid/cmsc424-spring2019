@@ -284,4 +284,4 @@ Switch to the `flighttrigger` database (i.e. exit out of the flights database an
 You may also use `trigger-test.py`, in which case you do not need to execute `psql -f trigger.sql flighttrigger` (it is included in the script). You can run the test script as `python trigger-test.py trigger.sql`. A few transactions to the `newcustomers` and `ffairlines` table are also provided. You are free to add more transactions for purposes of testing your trigger code. If you are going to run it multiple times.
 
 In the following link, you’ll find some useful trigger examples. https://www.postgresql.org/docs/9.2/static/plpgsql-trigger.html 
-https://www.postgresql.org/docs/current/functions-info.html#FUNCTIONS-INFO-SESSION-TABLE
+https://stackoverflow.com/questions/708562/prevent-recursive-trigger-in-postgresql
