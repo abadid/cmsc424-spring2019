@@ -29,16 +29,16 @@ Start the VM with `vagrant up` in the `project2/` directory. The database `fligh
 - The -v flag will print out more information, including the correct and submitted answers etc.
 
 ### Submission Instructions
-- Submit your answers to Q1 in `queries.py`
-- Submit your answers to Q2, Q3 in `answers.txt`
+- Submit your answers to Q1 and Q2 in `queries.py`
+- Submit your answers to Q3 via the quiz on ELMS
 - Submit your answer to Q4 in `trigger.sql`
 
 <br />
 
 
-**Q1 (5pt)**. [Outer Join] Write a query that uses an outer join to list all the customers who did not take a flight on August 3, 2016. [Output Column: `customerid`]
+**Q1 (5pt)**. Write a query that uses an outer join to list all the customers who did not take a flight on August 3, 2016. [Output Column: `customerid`]
 
-**Q2 (5pt)**. [Outer Join]  Write a query to find the percentage participation of Southwest Airlines in each airport, relative to the other airlines.  One instance of participation in an airport is defined as a flight (EX. SW123) having a source or dest of that airport. If SW123 leaves LAX and arrives in JFK, that adds 1 to Southwest's count for each airport.  This means that if SW has 1 in LAX, AA has 2 in LAX, DL has 3 in LAX, and UA has 4 in LAX, the query returns:
+**Q2 (5pt)**. Write a query to find the percentage participation of Southwest Airlines in each airport, relative to the other airlines.  One instance of participation in an airport is defined as a flight (EX. SW123) having a source or dest of that airport. If SW123 leaves LAX and arrives in JFK, that adds 1 to Southwest's count for each airport.  This means that if SW has 1 in LAX, AA has 2 in LAX, DL has 3 in LAX, and UA has 4 in LAX, the query returns:
 
 | airport | participation |
 | :---: | :---: |
@@ -52,7 +52,7 @@ Note:
 1. You do not need to confirm that the flights actually occur by referencing the flewon table. This query is only concerned with flights that exist in the flights table. 
 1. This is the same query 6 from project 1. The only difference is that we now include airports with 0 participation 
 
-**Q3 (8pt)**. [Outer Join] We will write a query using outer joins to find all the customers who satisfy all the following conditions  
+**Q3 (8pt)**. We will write a query using outer joins to find all the customers who satisfy all the following conditions  
   1. are born in or after 1996, and  
   1. have taken a flight at least once, and  
   1. have never taken a flight in or out of ‘ORD’.
