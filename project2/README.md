@@ -35,7 +35,7 @@ Start the VM with `vagrant up` in the `project2/` directory. The database `fligh
 <br />
 
 
-**Q1 (5pt)**. Write a query that uses an outer join to list all the customers who did not take a flight on August 3, 2016. [Output Column: `customerid`]
+**Q1 (5pt)**. Write a query that uses an outer join to list all the customers who did not take a flight on August 3, 2016. Order does not matter. [Output Column: `customerid`]
 
 **Q2 (5pt)**. Write a query to find the percentage participation of Southwest Airlines in each airport, relative to the other airlines.  One instance of participation in an airport is defined as a flight (EX. SW123) having a source or dest of that airport. If SW123 leaves LAX and arrives in JFK, that adds 1 to Southwest's count for each airport.  This means that if SW has 1 in LAX, AA has 2 in LAX, DL has 3 in LAX, and UA has 4 in LAX, the query returns:
 
@@ -104,7 +104,7 @@ Unfortuantely there are several apps that are using this schema, and some of the
 We can solve this using triggers!  We'll keep the old customers table around. And we'll give the new customers table a different name `newcustomers`. Originally it is populated with data from the original customers table (without the frequentflieron column which instead will be populated in the new ffairline table). 
 
 You need to write triggers that do the following:
-1. Whenever an app inserts/updates/deletes data into the `customers` table, a trigger is fired that does the same corresponding action for the copy of the data in the `newcustomers` and `ffairline` tables.  On inserts into the `customers` table the value for frequentflieron should result on an insertion into `ffairlines` of (customer, frequentflieron).  If frequentflieron is NULL you should NOT add (customerid, NULL) to the `ffairlines` table.  If frequentflieron is updated to NULL then delete all entries in `ffairlines` for that customer
+1. Whenever an app inserts/updates/deletes data into the `customers` table, a trigger is fired that does the same corresponding action for the copy of the data in the `newcustomers` and `ffairline` tables.  On inserts into the `customers` table the value for frequentflieron should result on an insertion into `ffairlines` of (customerid, frequentflieron).  If frequentflieron is NULL you should NOT add (customerid, NULL) to the `ffairlines` table.  Similarly on updates to frequentflieron a tuple should be inserted into `ffairlines` of (customerid, updated value of frequentflieron) If frequentflieron is updated to NULL then delete all entries in `ffairlines` for that customer
 1. Whenever an app inserts/updates/deletes data into the `newcustomers` table, a trigger is fired that does the same corresponding action for the copy of the data in the `customers` table. The value of the `frequentflieron` column in the `customers` table is the most frequently travelled airline for that customer (based on the record in the `flewon` table) that is one of the frequent flier airlines for that customer as listed in the new `ffairline` table (or null if there are no frequent flier airlines for that customer). In the case of a tie, the one that is smallest lexicographically is chosen. 
 1. We also need a trigger on the new `ffairline` table to update the value of the ffairline column of the old customers table if the value should change as a result of the update to the ffairline table.
 1. Since the flewon table can affect the choice of which airline should be listed as the `frequentflieron` value in the old customers table, we also need a trigger on the flewon table if as as result of the insert/update/delete to the table, the `frequentflieron` value needs to be changed in the old customers table. 
@@ -281,7 +281,17 @@ Note: We updated Betty's frequentflieron airline.  This may not always happen.  
 
 Switch to the `flighttrigger` database (i.e. exit out of the flights database and run `psql flighttrigger`). Execute `\i trigger-database.sql` The trigger code should be submitted in `trigger.sql` file. Running `psql -f trigger.sql flighttrigger` should generate the trigger without errors.
 
-You may also use `trigger-test.py`, in which case you do not need to execute `psql -f trigger.sql flighttrigger` (it is included in the script). You can run the test script as `python trigger-test.py trigger.sql`. A few transactions to the `newcustomers` and `ffairlines` table are also provided. You are free to add more transactions for purposes of testing your trigger code. If you are going to run it multiple times.
+You may also use `trigger-test.py`, in which case you do not need to execute `psql -f trigger.sql flighttrigger` (it is included in the script). You can run the test script as `python trigger-test.py trigger.sql`. A few transactions to the `newcustomers` and `ffairlines` table are also provided. You are free to add more transactions for purposes of testing your trigger code.
+The simplest way to reset the database is to
+```
+dropdb flighttrigger
+createdb flighttrigger
+psql -f trigger-database.sql flighttrigger
+psql -f trigger.sql flighttrigger
+```
+All of those commands are executed for you in the script
+
+We will be grading this assignment using the same trigger-test.py file but with different data.
 
 In the following link, you’ll find some useful trigger examples. https://www.postgresql.org/docs/9.2/static/plpgsql-trigger.html 
 https://stackoverflow.com/questions/708562/prevent-recursive-trigger-in-postgresql
