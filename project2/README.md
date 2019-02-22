@@ -8,7 +8,6 @@ Please do a `git pull` to download the directory `project2`. The files are:
 1. small.sql: SQL script for populating `flights` database.
 1. queries.py: The file where to enter your answers for Q1 and Q2; this file has to be submitted
 1. answers.py: The answers to query Q1 and Q2.
-1. answers.txt: Put your answer to Q3 here; this file has to be submitted.
 1. SQLTesting.py: File to be used for testing your SQL submission -- see below 
 1. trigger-database.sql: SQL script for setting up the `flighttrigger` database.
 1. trigger-test.py: Python script for testing the trigger.
