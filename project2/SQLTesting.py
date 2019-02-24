@@ -6,6 +6,7 @@ from operator import itemgetter
 from collections import Counter
 from types import *
 import argparse
+import decimal
 
 from queries import *
 from answers import *
@@ -23,13 +24,11 @@ verbose = args.verbose
 
 # Check if x and y are almost near match
 def match(x, y):
+	if type(x) is decimal.Decimal:
+		return x == y
 	if type(x) != type(y):
 		return False
-	if type(x) is IntType or type(x) is BooleanType or type(x) is LongType:
-		return x == y
-	if type(x) is FloatType:
-		return (abs(x - y) < 0.01)
-	# Conver to string and compare
+	# Convert to string and compare
 	# print "Found type: {}".format(type(x))
 	return str(x).strip() == str(y).strip()
 
