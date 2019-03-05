@@ -245,6 +245,11 @@ Finally, we want you to put all of these steps together and add a new page to `O
   ```bash
     javac -classpath WEB-INF/lib/*:WEB-INF/classes -d WEB-INF/classes com/match/web/INSERT_SERVLET NAME.java
   ```
+You also need to add a navbar for your doctor page. In the `header.tag` file, add the following line to create it:
+
+  ```html
+    <li><a href="doctor">Find Doctor</a></li>
+  ```
 
 As described earlier, you may encounter an issue with running `sudo ./build.sh` you are using Windows to edit `build.sh`. This might cause issues with carriage return characters and when you try to run it no command runs properly (the first line will be along the lines of "1: cd: can't cd to ./src"). If this happens, you can resolve this by doing the following:
 
