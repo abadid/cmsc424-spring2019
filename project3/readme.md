@@ -135,6 +135,8 @@ You will also have to create a user with name **"matchmaker"** and password **â€
 $ psql matchapp
 matchapp=# create user matchmaker with password 'kingofthenorth';
 matchapp=# grant all privileges on database matchapp to matchmaker;
+matchapp=# GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO matchmaker;
+matchapp=# GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO matchmaker;
 matchapp=# \q
 ```
 
