@@ -20,12 +20,14 @@ public class GenerateMatch extends SimpleTagSupport {
 
   public void doTag() throws JspException, IOException {
     //You write Person.getMatchedPeople in Person class
-    people = Person.getOrganMatches(id);
+    if (!id.equals("")) {
+      people = Person.getOrganMatches(id);
 
-    for (int i = 0; i < people.length; i++) {
-      getJspContext().setAttribute("first", people[i].getFirstName());
-      getJspContext().setAttribute("last", people[i].getLastName());
-      getJspBody().invoke(null);
+      for (int i = 0; i < people.length; i++) {
+        getJspContext().setAttribute("first", people[i].getFirstName());
+        getJspContext().setAttribute("last", people[i].getLastName());
+        getJspBody().invoke(null);
+      }
     }
   }
 }
