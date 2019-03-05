@@ -297,7 +297,7 @@ public class Person {
 	This should return the id of Abrams, since they have the fewest patients, most
 	experience, and their name comes before Delgado's aphabetically.
 	*/
-	public static int getDoctorUpate (Organ o, int pid) {
+	public static int getDoctorUpdate (Organ o, int pid) {
 		con = getConnection();
 
 	    if (con == null) {
