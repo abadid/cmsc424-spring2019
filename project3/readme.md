@@ -202,10 +202,10 @@ You can add main function in `Person.java` to test each function you modified. F
 
 ```java
 public static void main(String [] args) {
-		Person[] persons1 = Person.getPeople();
-		  for (Person p : persons1) {
-		    System.out.println(p.getFirstName() + " " + p.getLastName());
-	   }
+  Person[] persons1 = Person.getPeople();
+    for (Person p : persons1) {
+      System.out.println(p.getFirstName() + " " + p.getLastName());
+    }
 }
 ```
 
