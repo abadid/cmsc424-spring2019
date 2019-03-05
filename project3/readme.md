@@ -198,6 +198,27 @@ You will need to complete the following methods in the `Person.java` model file 
 
 The `Person.java` file has comments above each method with more details about what each method should do. We will be testing each of these methods individually to ensure that they produce the output as specified by the comments above each method on a database with different people and doctors that we make. The data we test it on will be exactly the same as the form we have given to you in `organs.sql` --- only the actual values will be different.  
 
+You can add main function in `Person.java` to test each function you modified. For example:
+
+```java
+public static void main(String [] args) {
+		Person[] persons1 = Person.getPeople();
+		  for (Person p : persons1) {
+		    System.out.println(p.getFirstName() + " " + p.getLastName());
+	   }
+}
+```
+
+To run `Person.java`:
+
+```bash
+cd /vagrant/matchapp/src/WEB-INF
+cd ../../ && sudo bash build.sh
+cd /vagrant/matchapp/src/WEB-INF
+java -classpath "lib/*:classes/.:." com.match.model.Person
+```
+
+
 ## **Part 3: Connecting Back-end + Front-end (6 points)**
 
 Now that you have successfully finished the majority of the back-end (logic tier) components, you will now have to hook up the back-end with the front-end components. This process will be done via the Java files in the **matchapp/src/com/match/web** directory. You will complete the TODO stubs found in the `doPost()` methods of **AddPerson.java**, **AddOffer.java**, and **AddRequest.java**.
