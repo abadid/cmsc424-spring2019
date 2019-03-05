@@ -194,7 +194,7 @@ You will need to complete the following methods in the `Person.java` model file 
 
 * **getDoctorFirst(pid):** Assign a doctor to a newly registered person. See the method comments for more details on how to do that. (2pts)
 
-* **getDoctorUpdate(Organ o,int pid):** Assign a new doctor to someone who registers an organ. See the method comments for more details on how to do that.
+* **getDoctorUpdate(Organ o,int pid):** Assign a new doctor to someone who registers an organ. See the method comments for more details on how to do that. (2pts)
 
 The `Person.java` file has comments above each method with more details about what each method should do. We will be testing each of these methods individually to ensure that they produce the output as specified by the comments above each method on a database with different people and doctors that we make. The data we test it on will be exactly the same as the form we have given to you in `organs.sql` --- only the actual values will be different.  
 
