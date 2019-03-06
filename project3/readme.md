@@ -41,7 +41,7 @@ $ vagrant ssh
 vagrant@vagrant-ubuntu-trusty-64:~$ sudo systemctl start tomcat
 vagrant@vagrant-ubuntu-trusty-64:~$ sudo systemctl status tomcat
 vagrant@vagrant-ubuntu-trusty-64:~$ cd /vagrant/matchapp
-# sudo ./build.sh or sudo /bin/bash build.sh 
+# sudo ./build.sh or sudo /bin/bash build.sh
 vagrant@vagrant-ubuntu-trusty-64:/vagrant/matchapp$ sudo /bin/bash build.sh
 # Navigate to the page localhost:8080 in your browser
 ```
@@ -80,7 +80,7 @@ Navigate to the page `localhost:8080` in your browser (you can use whatever brow
 
 ## **Schema + User**
 
-We already created a database called `matchapp` for you. You should run `\i organs.sql` from the psql interface to insert tuples. Make sure you are in the top level of the `/vagrant` directory when you enter the database (`psql matchapp`). 
+We already created a database called `matchapp` for you. You should run `\i organs.sql` from the psql interface to insert tuples. Make sure you are in the top level of the `/vagrant` directory when you enter the database (`psql matchapp`).
 
 ```bash
 $ cd /vagrant
@@ -156,7 +156,7 @@ Please draw an ER diagram that could have been used to generate this schema spec
 
 - Did you draw any double-lines in your ER model corresponding to a total participation constraint? Answer either "yes" or "no".
 
-Please answer the questions in a text file called **part1.txt** with one line per answer. For example, if you thought the answers to the five questions are 100, relationship set, 35, false, and yes respectively. 
+Please answer the questions in a text file called **part1.txt** with one line per answer. For example, if you thought the answers to the five questions are 100, relationship set, 35, false, and yes respectively.
 The `part1.txt` file would contain:
 
 ```txt
@@ -218,6 +218,11 @@ cd /vagrant/matchapp/src/WEB-INF
 java -classpath "lib/*:classes/.:." com.match.model.Person
 ```
 
+**The following resources may help you in writing this code:**
+
+[Creating Statements](https://docs.oracle.com/javase/tutorial/jdbc/basics/processingsqlstatements.html#creating_statements)
+
+[Prepared Statements](https://docs.oracle.com/javase/tutorial/jdbc/basics/prepared.html)
 
 ## **Part 3: Connecting Back-end + Front-end (6 points)**
 
@@ -259,7 +264,7 @@ Finally, we want you to put all of these steps together and add a new page to `O
   ```
 
   The first servlet exposes the `doctor.jsp` file and creates a url to access the page.
-  For the second servlet, make sure the url-pattern is the same as the action field in the form you created in `doctor.jsp`. This tells the `doctor.jsp` form to direct to the java file you made in step 2 which then adds the info to the database. 
+  For the second servlet, make sure the url-pattern is the same as the action field in the form you created in `doctor.jsp`. This tells the `doctor.jsp` form to direct to the java file you made in step 2 which then adds the info to the database.
 
 5. Last, we need to add our new files to the build and re-build the web application. In the `build.sh` file, add this line to build your Java HttpServlet file from step 2. Note that you need to insert the name of your java file.
 
@@ -301,3 +306,96 @@ In addition to editing `./build.sh`, we want to add a link to the new page in th
 # **Submission**
 
 To submit the project, zip the matchapp folder into a zip file named **matchapp.zip**. Please submit your zip file, `part1.txt` file and `ER diagram` as separate files on ELMS.
+
+
+## **Part 5 (Optional): Deploying to AWS**
+
+More likely than not, you will have to work with a database in the cloud at some point in the future. Here we give you the opportunity to deploy your MatchMaker application to the cloud, turn it into a publicly accessible Website, and get to work with cloud databases a little bit. Note that you can sign up for a free tier trial to use AWS with a new account; however Amazon may charge money to deploy this app. However, you can apply for free Amazon credit as a student (https://www.awseducate.com/Registration) that should cover the costs of the initial deployment. Please note that this application process may take several days for them to get back to you.
+
+ Follow these steps to do this:
+
+1. Open the [Elastic Beanstalk Management Console](https://console.aws.amazon.com/elasticbeanstalk/home)
+
+2. Choose *Create New Application*
+
+3. For *Application Name*, type tomcat-snakes. Choose *Next*.
+
+4. Choose *Web Server Environment*
+
+5. Set the platform to *Tomcat* and choose *Next*.
+
+    * Use the tomcat8/java8 platform (which it should set to by default)
+
+6. Choose *Upload your own* and *Choose File*.
+
+7. Upload *ROOT.war* from your project directory and choose *Next*.
+
+8. Type a unique *Environment URL* and choose *Next*.
+
+9. Check *Create an RDS DB Instance with this environment* and choose *Next*.
+
+10. Set *Instance type* to *t2.nano* and choose *Next*. Choose *Next* again to skip tag configuration.
+
+11. Apply the following RDS settings and choose *Next* (leave the other settings default):
+
+    * DB engine: *postgres*
+
+    * Engine version: *9.6.2 (or whatever the most recent version is)*
+
+    * Instance class: *db.t2.micro*
+
+    * Master username: any username (make sure you know it)
+
+    * Master password: any password (make sure you know it)
+
+12. Choose Next to create and use the default role and instance profile.
+
+13. Choose Launch.
+
+This may take awhile (10 to 15 minutes). After it finishes, your application is in the cloud, but your database it created to go with it is actually empty :(. You need to create the person and match table in the database instance just like you did in your local postgres environment. You can do this by connecting to the database from your a postgresql client. Here are directions for using the psql linux client (which you already have on your virtual machine)
+
+1. Navigate to the configuration tab on your Elastic Beanstalk management console in your environment that you deployed the match application
+
+2. Scroll down to the Data Tier section and click on the link in the RDS card called "endpoint"
+
+3. It should take you to the Amazon RDS portion of the console. From here click on the link for your database. If you have used AWS and have other instances already there you should click on the link for the instance you just made, if not you should only have one link to click on anyways
+
+4. Scroll down to the Connect tab on the page
+
+5. Here you should see information we’re going to need to connect to the database: Take note of the endpoint name and port number. Make sure under publicly accessible it says "yes" (AWS should do this for you when you deployed with Beanstalk)
+
+6. We need to add a security rule to allow you to connect to your database from your own psql client. Go ahead and click on the link to the security group which is just below the endpoint information. This will take you to a new page in the console.
+
+7. At the bottom of the page, click on the inbound tab and click the edit button
+
+8. Click Add Rule and add a new rule with the following fields:
+
+    1. Type: All Traffic
+
+    2. Protocol: All
+
+    3. Port Range: 0 - 65535
+
+    4. Source: Custom
+
+        1. In the box enter "0.0.0.0/0"
+
+9. Leave the description blank and hit the save button
+
+10.  Now that our rule is set, we should be able to use psql to connect to the database
+
+11. From the command line on your machine type the following to connect:
+
+Psql --host=yourendpointname --port=yourport(should be 5432) --username=username you set previously in deploying --password --dbname=ebdb
+
+Notes:
+
+Your endpoint name should look something like: randomcharacters.morerandomcharacters.us-east-2.rds.amazonaws.com
+
+The dbname should be ebdb by default, if it is not, find the database name on the page for your db instance information
+
+You should get the prompt from ebdb, once there, create your tables.
+
+We won’t go through filling our tables with prepopulated values like we did locally. Test adding people on the register page and generating matches for them to make sure it is working. You will receive credit as long as we can add a person to your cloud deployed application, view added people in the people tab, and generate a match that writes to the match table. Add a line to the end of your part1.txt file with the url to your deployed application to receive extra credit for completing Part 6.
+
+Don't forget to delete your account (or at least undeploy the Website) after you receive the extra credit --- otherwise Amazon will continue to charge you after your free credits are used up. Alternateively, you can get a real domain name, get users to pay for the app (which means you will probably have to add more features), and cover your costs that way ;)

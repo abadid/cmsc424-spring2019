@@ -71,11 +71,13 @@ public class Person {
 		return lastName;
 	}
 
-
-	//Return an array of all the people in the person table
-	//You will need to make a SQL call via JDBC to the database to get all of the people
-	//Since the webpage only needs to display the person's first and last name, only those fields
-	//of the Person object need to be instantiated (i.e., you can use the second of the three Person constructors above)
+/*
+	Return an array of all the people in the person table
+	You will need to make a SQL call via JDBC to the database to get all of the people
+	Since the webpage only needs to display the person's first and last name, only those fields
+	of the Person object need to be instantiated (i.e., you can use the second of the three Person constructors above)
+	Order does not matter.
+*/
 	public static Person[] getPeople() {
 
 		con = getConnection();
@@ -98,13 +100,16 @@ public class Person {
 	First: Dave, Last: Howland, bloodtype: AB
 
 	If we query with the string: "ave", the Person array that is returned contains both people
-	If we query with the string: "more", the Person array that is returned contains just Alex
-	If we query with the string: COUNT, the Person array is empty
+	If we query with the string: "West", the Person array that is returned contains just Alex
+	If we query with the string: "COUNT", the Person array is empty
 
-	The order of the people returned does not matter
+	The order of the people returned does not matter.
+
+	Once again you only have to return first and last name.
 
 	If no rows in the database are found with a substring match, you should return an empty array of Person.
 
+	You must use a prepared statement.
 	*/
 	public static Person[] getPersonSearch(String query) {
 
@@ -119,12 +124,14 @@ public class Person {
 		return new Person[]{};
 	}
 
-	/*This should return a Person object with all of its fields instatiated
+	/*This should return a Person object with all of its fields instantiated
 	for the person with the given id in the person table. Note that since id is unique, there
 	will only be one person ever returned by this method
 
 	Return a person with the first name "No" and the last name "Matches" if
 	the person with the id does not exist.
+
+	You do not need to use a prepared statement (but you still can!).
 	*/
 	public static Person getPerson(String pid) {
 
@@ -169,7 +176,7 @@ public class Person {
 	If the person has no matches, return an empty Person array.
 	If the person doesn't need an organ, return an empty Person array.
 
-	You do not need to use a prepared statement.
+	You must use a prepared statement.
 	*/
 
 	public static Person[] getOrganMatches(String id) {
@@ -197,8 +204,7 @@ public class Person {
 	Return 1 on success or -1 otherwise.
 	*/
 	public static int addNeededOrgan(Organ o, int pid, String byDate) {
-		/////// SOLUTION ///////
-		// should we check for any constrainst or let the sql error handle duplicates?
+
 		con = getConnection();
 
 		if (con == null) {
@@ -221,8 +227,7 @@ public class Person {
 	You must use a prepared statement.
 	*/
 	public static int addAvailableOrgan(Organ o, int pid) {
-		/////// SOLUTION ///////
-		// should we check for any constrainst or let the sql error handle duplicates?
+
 		con = getConnection();
 
 		if (con == null) {
@@ -260,6 +265,8 @@ public class Person {
 	the doctor with the smallest id.
 
 	pid = person id
+
+	You must use prepared statements.
 	*/
 	public static int getDoctorFirst (int pid) {
 
@@ -296,6 +303,8 @@ public class Person {
 
 	This should return the id of Abrams, since they have the fewest patients, most
 	experience, and their name comes before Delgado's aphabetically.
+
+	You must use prepared statements.
 	*/
 	public static int getDoctorUpdate (Organ o, int pid) {
 		con = getConnection();
@@ -310,8 +319,9 @@ public class Person {
 
 	/*
 	Get the name of a patient's doctor, given the patient's id.
-	*/
 
+	You must use a prepared statement.
+	*/
 	public static String getDoctorName(int pid){
 		con = getConnection();
 
