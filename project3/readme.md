@@ -12,7 +12,7 @@ To begin this project you will have to pull the project 3 folder from our git re
 
 Make sure to run this every time you change your code in order to recompile it. You should also run it while the server is running (more on that later).
 
-You may encounter an issue with running sudo ./build.sh you are using Windows to edit build.sh. This might cause issues with carriage return characters and when you try to run it no command runs properly (the first line will be along the lines of "1: cd: can't cd to ./src"). If this happens, you can resolve this by doing the following:
+You may encounter an issue with running sudo ./build.sh if you are using Windows to edit build.sh. This might cause issues with carriage return characters and when you try to run it no command runs properly (the first line will be along the lines of "1: cd: can't cd to ./src"). If this happens, you can resolve this by doing the following:
 
  - Download the program dos2unix on your vagrant machine with: sudo apt-get install dos2unix
  - Run dos2unix build.sh in your vagrant command line
