@@ -404,6 +404,4 @@ The dbname should be ebdb by default, if it is not, find the database name on th
 
 You should get the prompt from ebdb, once there, create your tables.
 
-We won’t go through filling our tables with prepopulated values like we did locally. Test adding people on the register page and generating matches for them to make sure it is working. You will receive credit as long as we can add a person to your cloud deployed application, view added people in the people tab, and generate a match that writes to the match table. Add a line to the end of your part1.txt file with the url to your deployed application to receive extra credit for completing Part 6.
-
-Don't forget to delete your account (or at least undeploy the Website) after you receive the extra credit --- otherwise Amazon will continue to charge you after your free credits are used up. Alternateively, you can get a real domain name, get users to pay for the app (which means you will probably have to add more features), and cover your costs that way ;)
+Don't forget to delete your account (or at least undeploy the Website) after you complete the exercise --- otherwise Amazon will continue to charge you after your free credits are used up. Alternateively, you can get a real domain name, get users to pay for the app (which means you will probably have to add more features), and cover your costs that way ;)
