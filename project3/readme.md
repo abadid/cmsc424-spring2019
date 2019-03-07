@@ -129,6 +129,14 @@ The schema is as follows:
 
     * **organ:** **(Primary Key)** String representing what organ the person needs. References the organs table
 
+* **organs**: [organs.sql#L2-L8](https://github.com/abadid/cmsc424-spring2019/blob/fe1e6cc74182409f8a6b96aa727b2a09b954174c/project3/organs.sql#L52-L58)
+
+    * **organ:** **(Primary Key)**  A string that names an organ.
+    
+* **blood_type**: [organs.sql#L10-L19](https://github.com/abadid/cmsc424-spring2019/blob/fe1e6cc74182409f8a6b96aa727b2a09b954174c/project3/organs.sql#L52-L58)
+
+    * **type:** **(Primary Key)**  A string that names a blood type.
+  
 You will also have to create a user with name **"matchmaker"** and password **“kingofthenorth”** and you must grant all permissions to that user to access your database and tables as it will be the one doing the database manipulation. Below are the commands to do this (which you can run in psql or add to a .sql file):
 
 ```bash
