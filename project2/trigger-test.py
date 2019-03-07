@@ -147,7 +147,7 @@ printAll('after Removing AA as ffairline.  Now it should be null because cust4 h
 print("------------------- CONTINUING WITH OPERATIONS ON FLEWON -------------------")
 
 
-print("Adding both UA and SW as ff airlines for cust4")
+print("Adding both UA and AA as ff airlines for cust4")
 cur.execute("INSERT into ffairlines values ('cust4', 'UA')")
 cur.execute("INSERT into ffairlines values ('cust4', 'AA')")
 conn.commit()
