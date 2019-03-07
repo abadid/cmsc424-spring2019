@@ -129,11 +129,11 @@ The schema is as follows:
 
     * **organ:** **(Primary Key)** String representing what organ the person needs. References the organs table
 
-* **organs**: [organs.sql#L2-L8](https://github.com/abadid/cmsc424-spring2019/blob/fe1e6cc74182409f8a6b96aa727b2a09b954174c/project3/organs.sql#L52-L58)
+* **organs**: [organs.sql#L2-L8](https://github.com/abadid/cmsc424-spring2019/blob/fe1e6cc74182409f8a6b96aa727b2a09b954174c/project3/organs.sql#L2-L8)
 
     * **organ:** **(Primary Key)**  A string that names an organ.
     
-* **blood_type**: [organs.sql#L10-L19](https://github.com/abadid/cmsc424-spring2019/blob/fe1e6cc74182409f8a6b96aa727b2a09b954174c/project3/organs.sql#L52-L58)
+* **blood_type**: [organs.sql#L10-L19](https://github.com/abadid/cmsc424-spring2019/blob/fe1e6cc74182409f8a6b96aa727b2a09b954174c/project3/organs.sql#L10-L19)
 
     * **type:** **(Primary Key)**  A string that names a blood type.
   
