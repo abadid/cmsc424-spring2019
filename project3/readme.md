@@ -132,11 +132,11 @@ The schema is as follows:
 * **organs**: [organs.sql#L2-L8](https://github.com/abadid/cmsc424-spring2019/blob/fe1e6cc74182409f8a6b96aa727b2a09b954174c/project3/organs.sql#L2-L8)
 
     * **organ:** **(Primary Key)**  A string that names an organ.
-    
+
 * **blood_type**: [organs.sql#L10-L19](https://github.com/abadid/cmsc424-spring2019/blob/fe1e6cc74182409f8a6b96aa727b2a09b954174c/project3/organs.sql#L10-L19)
 
     * **type:** **(Primary Key)**  A string that names a blood type.
-  
+
 You will also have to create a user with name **"matchmaker"** and password **“kingofthenorth”** and you must grant all permissions to that user to access your database and tables as it will be the one doing the database manipulation. Below are the commands to do this (which you can run in psql or add to a .sql file):
 
 ```bash
@@ -152,11 +152,11 @@ matchapp=# \q
 
 ## **Part 1: ER diagram (5 points)**
 
-Please draw an ER diagram that could have been used to generate this schema specified above such that it contains at least one weak entity set. You do not have to include the organs and blood_type tables. Please answer the following questions about your ER diagram:
+Please draw an ER diagram that could have been used to generate this schema specified above such that it contains at least one weak entity set. You should not have organs and blood_type as their own entity sets, rather just have them as string fields of other entity sets (for instance, blood_type should be an attribute in the person entity). You should also make the available table into it's own entity set, rather than a multi-valued attribute of the person's table. Please answer the following questions about your ER diagram:
 
 - How many entity sets were included in your ER diagram for this appliciation? (You should count weak entity sets as entity sets for the purpose of this question.) Answer must be an integer.
 
-- Does the available table correspond to an entity set, a weak entity set, or a relationship set? Answer must be one of "entity set", "weak entity set", or "relationship set".
+- Does the needs table correspond to an entity set, a weak entity set, or a relationship set? Answer must be one of "entity set", "weak entity set", or "relationship set".
 
 - How many attributes were included in the person set [entity set or relationship set depending on your answer above] in the ER diagram? Answer must be an integer.
 

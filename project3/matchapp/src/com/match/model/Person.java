@@ -287,7 +287,8 @@ public class Person {
 	The way to assign a proper doctor is to find the doctor with the
 	fewest patients, who also has the same specialty as their requested/offered organ.
 	You should use more experience as a tiebreaker. If two doctors are still tied,
-	choose the doctor with the smallest id.
+	choose the doctor with the first name alphabetically. Finally, if they are still tied
+	choose the one with the smaller id.
 
 	note: the patient will already be assigned a doctor from either signup or a previous
 	request/offer. DO NOT include the patient you are updating in the count of their doctor's patients.
