@@ -127,7 +127,7 @@ The schema is as follows:
 
     * **id:** **(Primary Key)**  An integer that represents the id of the person with the organ offer. This references the person table.
 
-    * **organ:** **(Primary Key)** String representing what organ the person needs. References the organs table
+    * **organ:** **(Primary Key)** String representing what organ the person has available. References the organs table
 
 * **organs**: [organs.sql#L2-L8](https://github.com/abadid/cmsc424-spring2019/blob/fe1e6cc74182409f8a6b96aa727b2a09b954174c/project3/organs.sql#L2-L8)
 
