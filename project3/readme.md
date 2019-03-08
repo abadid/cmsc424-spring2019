@@ -152,33 +152,20 @@ matchapp=# \q
 
 ## **Part 1: ER diagram (5 points)**
 
-Please draw an ER diagram that could have been used to generate this schema specified above such that it contains at least one weak entity set. You should not have organs and blood_type as their own entity sets, rather just have them as string fields of other entity sets (for instance, blood_type should be an attribute in the person entity). You should also make the available table into it's own entity set, rather than a multi-valued attribute of the person's table. Please answer the following questions about your ER diagram:
+Please draw an ER diagram that could have been used to generate this schema specified above such that it contains at least one weak entity set. Please do not have organs and blood_type as their own entity sets in your diagram; rather just have them as string fields of other entity sets (for instance, blood_type should be an attribute in the person entity). You should also make the 'available' table into it's own entity set (or weak entity set), rather than a multi-valued attribute of the person's table. Please answer the following questions about your ER diagram via a quiz on ELMS.
 
-- How many entity sets were included in your ER diagram for this appliciation? (You should count weak entity sets as entity sets for the purpose of this question.) Answer must be an integer.
+- How many entity sets were included in your ER diagram for this application? (You should count weak entity sets as entity sets for the purpose of this question.) 
 
-- Does the needs table correspond to an entity set, a weak entity set, or a relationship set? Answer must be one of "entity set", "weak entity set", or "relationship set".
+- Does the needs table correspond to an entity set, a weak entity set, or a relationship set? 
 
-- How many attributes were included in the person set [entity set or relationship set depending on your answer above] in the ER diagram? Answer must be an integer.
+- How many attributes were included in the person set?
 
-- True or False: There are no one-to-one, many-to-one, or one-to-many mapping cardinalities in the ER diagram. In other words you didn't draw any directed edges in your diagram. Answer either "true" or "false".
+- True or False: There are no many-to-many mapping cardinalities in your ER diagram. 
 
-- Did you draw any double-lines in your ER model corresponding to a total participation constraint? Answer either "yes" or "no".
-
-Please answer the questions in a text file called **part1.txt** with one line per answer. For example, if you thought the answers to the five questions are 100, relationship set, 35, false, and yes respectively.
-The `part1.txt` file would contain:
-
-```txt
-100
-relationship set  
-35
-false  
-yes
-```
+- True or False: There are no total participation constraints in your ER diagram.
 
 
-Please note that the grader **will not be** case sensitive, but it **will be** spelling sensitive --- so please be careful to spell your answers to the second, fourth, and fifth questions correctly. Use the exact format shown after each question. Note the possible answers for 2 are as follows: "entity set", "weak entity set", and "relationship set". If you have an answer that is not spelled exactly like one of those three it will be marked wrong.
-
-Please submit your ER diagram as a `.png`, `.jpg`, or `.pdf` file. Feel free to draw it by hand, take a picture of what you drew, and submit it that way. It will not be graded separately, but might be looked at to give you partial credit if you got several of the questions above incorrect.
+We will also ask you to submit your ER diagram as a `.png`, `.jpg`, or `.pdf` file to the quiz on ELMS. Feel free to draw it by hand, take a picture of what you drew, and submit it that way. It will not be graded separately, but only used to justify your answers above.
 
 ## **Part 2: Person.java: Back-end + DB (24 points)**
 
