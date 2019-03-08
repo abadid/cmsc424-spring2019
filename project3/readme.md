@@ -154,7 +154,7 @@ matchapp=# \q
 
 ## **Part 1: ER diagram (5 points)**
 
-Please draw an ER diagram that could have been used to generate this schema specified above such that it contains at least one weak entity set. Please do not have organs and blood_type as their own entity sets in your diagram; rather just have them as string fields of other entity sets (for instance, blood_type should be an attribute in the person entity). You should also make the 'available' table into it's own entity set (or weak entity set), rather than a multi-valued attribute of the person's table. Please answer the following questions about your ER diagram via a quiz on ELMS.
+Please draw an ER diagram that could have been used to generate this schema specified above such that it contains at least one weak entity set. Please do not have organs and blood_type as their own entity sets in your diagram; rather just have them as string fields of other entity sets (for instance, blood_type should be an attribute in the person entity). You should also make the 'available' table into its own entity set (or weak entity set), rather than a multi-valued attribute of the person's table. Please answer the following questions about your ER diagram via a quiz on ELMS.
 
 - How many entity sets were included in your ER diagram for this application? (You should count weak entity sets as entity sets for the purpose of this question.) 
 
