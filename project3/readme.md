@@ -300,7 +300,7 @@ In addition to editing `./build.sh`, we want to add a link to the new page in th
 
 # **Submission**
 
-To submit the project, zip the matchapp folder into a zip file named **matchapp.zip**. Please submit your zip file, `part1.txt` file and `ER diagram` as separate files on ELMS.
+To submit the project, zip the matchapp folder into a zip file named **matchapp.zip** and submit via ELMS. Please submit your Part 1 seperately via the quiz on ELMS.
 
 
 ## **Part 5 (Optional): Deploying to AWS**
