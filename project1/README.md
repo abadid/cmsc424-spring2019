@@ -75,7 +75,7 @@ Submit the `queries.py` file using the Assignments link on ELMS.
 See `queries.py` file.
 
 ### Run Queries on Large Dataset
-The large dataset `large.sql`, the answers (`correct-queries.py`, `answers_large.py`), and the grading script `SQLGrading.py` has been released.
+The large dataset `large.sql`, the answers (`answers_large.py`), and the grading script `SQLGrading.py` has been released.
 To reproduce the grade of your submission, please pull those files, and follow the instructions below in the the VM.
 
 1. Populate the large dataset
