@@ -1,5 +1,7 @@
 # **Project 3: Matchapp (JDBC Manipulation)**
 
+(This project is to be done individually.)
+
 ## **Introduction**
 
 This project should help you gain the skills involved in creating a fully functional web application that interfaces with a database system using JDBC. We will be creating an application that functions as a Craigslist of organ donations. We will be using Java and Tomcat to make this happen in conjunction with a variation of HTML (JSP) to create webpages. You will be a "Full-stack developer" in this project since you will be dealing with all three tiers of a 3-tier architecture: the front-end (presentation tier), the back-end (logic tier), and the database system components of the application!
