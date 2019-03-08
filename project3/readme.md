@@ -195,7 +195,7 @@ You will need to complete the following methods in the `Person.java` model file 
 
 The `Person.java` file has comments above each method with more details about what each method should do. We will be testing each of these methods individually to ensure that they produce the output as specified by the comments above each method on a database with different people and doctors that we make. The data we test it on will be exactly the same as the form we have given to you in `organs.sql` --- only the actual values will be different.  
 
-You can add main function in `Person.java` to test each function you modified. For example:
+You may want to add a main function in `Person.java` to test each function you modified. For example:
 
 ```java
 public static void main(String [] args) {
@@ -307,7 +307,7 @@ To submit the project, zip the matchapp folder into a zip file named **matchapp.
 
 ## **Part 5 (Optional): Deploying to AWS**
 
-More likely than not, you will have to work with a database in the cloud at some point in the future. Here we give you the opportunity to deploy your MatchMaker application to the cloud, turn it into a publicly accessible Website, and get to work with cloud databases a little bit. Note that you can sign up for a free tier trial to use AWS with a new account; however Amazon may charge money to deploy this app. However, you can apply for free Amazon credit as a student (https://www.awseducate.com/Registration) that should cover the costs of the initial deployment. Please note that this application process may take several days for them to get back to you.
+More likely than not, you will have to work with a database in the cloud at some point in the future. Here we give you the opportunity to deploy your application to the cloud, turn it into a publicly accessible Website, and get to work with cloud databases a little bit. Note that you can sign up for a free tier trial to use AWS with a new account; however Amazon may charge money to deploy this app. However, you can apply for free Amazon credit as a student (https://www.awseducate.com/Registration) that should cover the costs of the initial deployment. Please note that this application process may take several days for them to get back to you.
 
  Follow these steps to do this:
 
