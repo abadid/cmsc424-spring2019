@@ -175,7 +175,7 @@ You will need to complete the following methods in the `Person.java` model file 
 
 * **getPeople():** Get a list of all the people in the database. (2pts)
 
-* **getPerson(int pid):** Get a specific person given a value for the id attribute. (2pts)
+* **getPerson(String pid):** Get a specific person given a value for the id attribute. (2pts)
 
 * **getPersonSearch(String substring):** Return people in the Person table that have an attribute that have a substring match with the query.  (3pts)
 
