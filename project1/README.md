@@ -11,12 +11,12 @@ The following assumes you have gone through PostgreSQL instructions from Project
 1. SQLTesting.py: File to be used for testing your submission -- see below
 1. Vagrantfile: A Vagrantfile that creates the 'flights' database and populates it using the `small.sql` file.
 
-**Note:** We will test your queries on a different, larger dataset. 
+**Note:** We will test your queries on a different, larger dataset.
 
 ### Getting started
 Start the VM with `vagrant up` in the `project1/` directory. The 'flights' database should already be set up, but if not, see a TA. ssh into your VM, run `cd /vagrant` and use the database the same way you did for project 0 (except in this case the database is called 'flights' instead of 'university').
 
-### Schema 
+### Schema
 The dataset contains synthetic air flight data. Specifically it contains the following tables:
 
 1. airports: airportid, city, name, total2011, total2012
@@ -30,11 +30,11 @@ See the provided SQL file for the table definitions.
 The dataset was generated synthetically: the airport ids and the cities were chosen from the biggest airports in the US, but the rest of the data is populated randomly. The data will not make sense. For example, two different flights between the same cities may have very different flight durations. The flight times between the cities may not correspond to geographical distances that you know. Some other information about the data:
 - Each customer may at most take one flight every day.
 - The flight times were chosen between 30 minutes to 5 hours randomly.
-- All flights are daily (start and end on a single day), and none are overnight. 
+- All flights are daily (start and end on a single day), and none are overnight.
 - For every flight from city A to city B, there is corresponding return flight from B to A.
 - The "flewon" table only contains the flight date -- the flight times must be extracted from the flights table.
 
-This assignment invovles writing SQL queries over this dataset.  In many cases (especially for complex queries or queries involving 
+This assignment invovles writing SQL queries over this dataset.  In many cases (especially for complex queries or queries involving
 `max` or `min`), you may find it helpful to use the `with` construct in order to break down your solution into less complex parts. This also will make debugging easier.
 
 Some of the queries require you to use string or date functions that were not in the assigned reading from your textbook. This will enable you to get some experience using DB documentation to help you to write queries. Some helpful links:
@@ -43,7 +43,7 @@ Some of the queries require you to use string or date functions that were not in
 - PostgreSQL string functions: https://www.postgresql.org/docs/9.1/functions-string.html
 - How to cast data types in PostgreSQL: http://www.postgresqltutorial.com/postgresql-cast/
 
-You don't have to use the "hints" if you don't want to; there might 
+You don't have to use the "hints" if you don't want to; there might
 be simpler ways to solve the questions.
 
 ### Testing and submitting using SQLTesting.py
@@ -64,14 +64,27 @@ You are also provided with a Python file `SQLTesting.py` for testing your answer
 
 - `-i` flag to SQLTesting will run all the queries, one at a time (waiting for you to press Enter after each query).
 
-- **Note that**: We will basically run this same program on your submitted `queries.py` file, but with a larger dataset; your score on the assignment will 
-be the score output by the program. The program tries to give partial credit (as you can see in the code). In general, it is unlikely that your score on the larger, hidden 
+- **Note that**: We will basically run this same program on your submitted `queries.py` file, but with a larger dataset; your score on the assignment will
+be the score output by the program. The program tries to give partial credit (as you can see in the code). In general, it is unlikely that your score on the larger, hidden
 dataset will be higher than your score on the dataset that we provided you.  
 
 ### Submission Instructions
 Submit the `queries.py` file using the Assignments link on ELMS.
-      
+
 ### Assignment Questions
 See `queries.py` file.
 
+### Run Queries on Large Dataset
+The large dataset `large.sql`, the answers (`answers_large.py`), and the grading script `SQLGrading.py` has been released.
+To reproduce the grade of your submission, please pull those files, and follow the instructions below in the the VM.
 
+1. Populate the large dataset
+```bash
+cd /vagrant
+sudo -u vagrant createdb large_flights
+sudo -u vagrant psql large_flights -f large.sql
+```
+2. Test your query file.
+```bash
+python SQLGrading.py
+```
