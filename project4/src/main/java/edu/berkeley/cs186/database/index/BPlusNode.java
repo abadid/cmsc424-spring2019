@@ -17,7 +17,7 @@ import edu.berkeley.cs186.database.table.RecordId;
 abstract class BPlusNode {
     // Core API //////////////////////////////////////////////////////////////////
     /**
-     * n.get(k) returns the leaf node on which k may reside when queried from n.
+     * node.get(k) returns the leaf node on which k may reside when queried from this node.
      * For example, consider the following B+ tree (for brevity, only keys are
      * shown; record ids are ommitted).
      *
@@ -45,24 +45,24 @@ abstract class BPlusNode {
     public abstract LeafNode get(BaseTransaction transaction, DataBox key);
 
     /**
-     * n.getLeftmostLeaf() returns the leftmost leaf in the subtree rooted by n.
+     * node.getLeftmostLeaf() returns the leftmost leaf in the subtree rooted by this node.
      * In the example above, inner.getLeftmostLeaf() would return leaf0, and
      * leaf1.getLeftmostLeaf() would return leaf1.
      */
     public abstract LeafNode getLeftmostLeaf(BaseTransaction transaction);
 
     /**
-     * n.put(k, r) inserts the pair (k, r) into the subtree rooted by n. There
+     * node.put(k, r) inserts the pair (k, r) into the subtree rooted by this node. There
      * are two cases to consider:
      *
-     *   Case 1: If inserting the pair (k, r) does NOT cause n to overflow, then
+     *   Case 1: If inserting the pair (k, r) does NOT cause the node to overflow, then
      *           Optional.empty() is returned.
-     *   Case 2: If inserting the pair (k, r) does cause the node n to overflow,
-     *           then n is split into a left and right node (described more
+     *   Case 2: If inserting the pair (k, r) does cause the node to overflow,
+     *           then the node is split into a left and right node (described more
      *           below) and a pair (split_key, right_node_page_num) is returned
      *           where right_node_page_num is the page number of the newly
      *           created right node, and the value of split_key depends on
-     *           whether n is an inner node or a leaf node (described more below).
+     *           whether the node is an inner node or a leaf node (described more below).
      *
      * Now we explain how to split nodes and which split keys to return. Let's
      * take a look at an example. Consider inserting the key 4 into the example
@@ -138,10 +138,10 @@ abstract class BPlusNode {
     throws BPlusTreeException;
 
     /**
-     * n.bulkLoad(data, fillFactor) bulk loads pairs of (k, r) from data into
+     * node.bulkLoad(data, fillFactor) bulk loads pairs of (k, r) from data into
      * the tree with the given fill factor.
      *
-     * This method is very similar to n.put, with a couple of differences:
+     * This method is very similar to node.put, with a couple of differences:
      *
      * 1. Leaf nodes do not fill up to 2*d+1 and split, but rather, fill up to
      * be 1 record more than fillFactor full, then "splits" by creating a right
@@ -162,8 +162,8 @@ abstract class BPlusNode {
     throws BPlusTreeException;
 
     /**
-     * n.remove(k) removes the key k and its corresponding record id from the
-     * subtree rooted by n, or does nothing if the key k is not in the subtree.
+     * node.remove(k) removes the key k and its corresponding record id from the
+     * subtree rooted by this node, or does nothing if the key k is not in the subtree.
      * REMOVE SHOULD NOT REBALANCE THE TREE. Simply delete the key and
      * corresponding record id. For example, running inner.remove(2) on the
      * example tree above would produce the following tree.
@@ -240,13 +240,13 @@ abstract class BPlusNode {
     public abstract String toSexp(BaseTransaction transaction);
 
     /**
-     * n.toDot() returns a fragment of a DOT file that draws the subtree rooted
-     * at n.
+     * node.toDot() returns a fragment of a DOT file that draws the subtree rooted
+     * at this node.
      */
     public abstract String toDot(BaseTransaction transaction);
 
     // Serialization /////////////////////////////////////////////////////////////
-    /** n.toBytes() serializes n. */
+    /** node.toBytes() serializes the node. */
     public abstract byte[] toBytes();
 
     /**

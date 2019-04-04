@@ -218,32 +218,32 @@ class LeafNode extends BPlusNode {
      * with 2d entries will fit on a single page of size `pageSizeInBytes`.
      */
     public static int maxOrder(int pageSizeInBytes, Type keySchema) {
-        // A leaf node with n entries takes up the following number of bytes:
+        // A leaf node with k entries takes up the following number of bytes:
         //
-        //   1 + 4 + 4 + n * (keySize + ridSize)
+        //   1 + 4 + 4 + k * (keySize + ridSize)
         //
         // where
         //
         //   - 1 is the number of bytes used to store isLeaf,
         //   - 4 is the number of bytes used to store a sibling pointer,
-        //   - 4 is the number of bytes used to store n,
+        //   - 4 is the number of bytes used to store k,
         //   - keySize is the number of bytes used to store a DataBox of type
         //     keySchema, and
         //   - ridSize is the number of bytes of a RecordId.
         //
         // Solving the following equation
         //
-        //   n * (keySize + ridSize) + 9 <= pageSizeInBytes
+        //   k * (keySize + ridSize) + 9 <= pageSizeInBytes
         //
         // we get
         //
-        //   n = (pageSizeInBytes - 9) / (keySize + ridSize)
+        //   k = (pageSizeInBytes - 9) / (keySize + ridSize)
         //
-        // The order d is half of n.
+        // The order d is half of k.
         int keySize = keySchema.getSizeInBytes();
         int ridSize = RecordId.getSizeInBytes();
-        int n = (pageSizeInBytes - 9) / (keySize + ridSize);
-        return n / 2;
+        int k = (pageSizeInBytes - 9) / (keySize + ridSize);
+        return k / 2;
     }
 
     // For testing only.

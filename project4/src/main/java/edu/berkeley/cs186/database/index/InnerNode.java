@@ -13,7 +13,7 @@ import edu.berkeley.cs186.database.table.RecordId;
 
 /**
  * A inner node of a B+ tree. Every inner node in a B+ tree of order d stores
- * between d and 2d keys. An inner node with n keys stores n + 1 "pointers" to
+ * between d and 2d keys. An inner node with k keys stores k + 1 "pointers" to
  * children nodes (where a pointer is just a page number). Moreover, every
  * inner node is serialized and persisted on a single page; see toBytes and
  * fromBytes for details on how an inner node is serialized. For example, here
@@ -135,30 +135,30 @@ class InnerNode extends BPlusNode {
      * with 2d keys will fit on a single page of size `pageSizeInBytes`.
      */
     public static int maxOrder(int pageSizeInBytes, Type keySchema) {
-        // A leaf node with n entries takes up the following number of bytes:
+        // A leaf node with k entries takes up the following number of bytes:
         //
-        //   1 + 4 + (n * keySize) + ((n + 1) * 4)
+        //   1 + 4 + (k * keySize) + ((k + 1) * 4)
         //
         // where
         //
         //   - 1 is the number of bytes used to store isLeaf,
-        //   - 4 is the number of bytes used to store n,
+        //   - 4 is the number of bytes used to store k,
         //   - keySize is the number of bytes used to store a DataBox of type
         //     keySchema, and
         //   - 4 is the number of bytes used to store a child pointer.
         //
         // Solving the following equation
         //
-        //   5 + (n * keySize) + ((n + 1) * 4) <= pageSizeInBytes
+        //   5 + (k * keySize) + ((k + 1) * 4) <= pageSizeInBytes
         //
         // we get
         //
-        //   n = (pageSizeInBytes - 9) / (keySize + 4)
+        //   k = (pageSizeInBytes - 9) / (keySize + 4)
         //
-        // The order d is half of n.
+        // The order d is half of k.
         int keySize = keySchema.getSizeInBytes();
-        int n = (pageSizeInBytes - 9) / (keySize + 4);
-        return n / 2;
+        int k = (pageSizeInBytes - 9) / (keySize + 4);
+        return k / 2;
     }
 
     /**
@@ -189,28 +189,28 @@ class InnerNode extends BPlusNode {
      * a, b, c).
      */
     public static <T extends Comparable<T>> int numLessThanEqual(T x, List<T> ys) {
-        int n = 0;
+        int k = 0;
         for (T y : ys) {
             if (y.compareTo(x) <= 0) {
-                ++n;
+                ++k;
             } else {
                 break;
             }
         }
-        return n;
+        return k;
     }
 
     /** Same as numLessThanEqual but for < instead of <= */
     public static <T extends Comparable<T>> int numLessThan(T x, List<T> ys) {
-        int n = 0;
+        int k = 0;
         for (T y : ys) {
             if (y.compareTo(x) < 0) {
-                ++n;
+                ++k;
             } else {
                 break;
             }
         }
-        return n;
+        return k;
     }
 
     // Pretty Printing ///////////////////////////////////////////////////////////
@@ -277,10 +277,10 @@ class InnerNode extends BPlusNode {
         //
         //   a. the literal value 0 (1 byte) which indicates that this node is not
         //      a leaf node,
-        //   b. the number n (4 bytes) of keys this inner node contains (which is
+        //   b. the number k (4 bytes) of keys this inner node contains (which is
         //      one fewer than the number of children pointers),
-        //   c. the n keys, and
-        //   d. the n+1 children pointers.
+        //   c. the k keys, and
+        //   d. the k+1 children pointers.
         //
         // For example, the following bytes:
         //
@@ -325,11 +325,11 @@ class InnerNode extends BPlusNode {
 
         List<DataBox> keys = new ArrayList<>();
         List<Integer> children = new ArrayList<>();
-        int n = buf.getInt();
-        for (int i = 0; i < n; ++i) {
+        int k = buf.getInt();
+        for (int i = 0; i < k; ++i) {
             keys.add(DataBox.fromBytes(buf, metadata.getKeySchema()));
         }
-        for (int i = 0; i < n + 1; ++i) {
+        for (int i = 0; i < k + 1; ++i) {
             children.add(buf.getInt());
         }
         return new InnerNode(metadata, pageNum, keys, children, transaction);
