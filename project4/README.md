@@ -2,11 +2,11 @@
 
 ## **Introduction**
 
-This is a project adapted from Berkeley that will hopefully give you an understanding of how indexing works in a B+ Tree by having you implement a B+ Tree itself.  Do not fear, you will not be writing this from scratch!  Methods you will need to implement will have comments telling you to do so.  More on this later.
+This project was adapted from a B+ tree implementation project originally developed at the University of California Berkeley. The goal of this project is to give you a deeper understanding of how B+ trees work. The best way to accomplish this is by building one yourself. Do not fear, you will not be writing this from scratch!  Methods you will need to implement will have comments telling you what to do.  More on this later.
 
 ## **Environment**
 
-We will not be using vagrant this time as it will not be necessary.  We highly recommend you use an IDE like Eclipse for this project.  We will be using Maven to run the tests.  If you can import the code as a Maven project in your IDE and run your unit tests successfully, you do not need to install Maven on your local computer. Most IDEs should provide this functionality by default, in Eclipse for example, you can do this: File > import > maven > existing maven project.
+We will not be using the virtual machine environment that we've been using for the other projects thus far this semester, since this is a pure Java project.  We highly recommend you install/use an IDE like Eclipse for this project.  We will be using Maven to run the tests.  If you can import the code as a Maven project in your IDE and run your unit tests successfully, you do not need to install Maven on your local computer. Most IDEs should provide this functionality by default. For example, in Eclipse, you can do this: File > import > maven > existing maven project.
 
 
 ## **The Project Files**
