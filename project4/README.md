@@ -1,5 +1,7 @@
 # **Project 4: B+ Trees**
 
+This project is to be done by yourself.
+
 ## **Introduction**
 
 This project was adapted from a B+ tree implementation project originally developed at the University of California Berkeley. The goal of this project is to give you a deeper understanding of how B+ trees work. The best way to accomplish this is by building one yourself. Do not fear, you will not be writing this from scratch!  Methods you will need to implement will have comments telling you what to do.  More on this later.
