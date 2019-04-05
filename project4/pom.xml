@@ -33,18 +33,20 @@
                     <dependency>
                         <groupId>org.apache.maven.surefire</groupId>
                         <artifactId>surefire-junit47</artifactId>
-                        <version>2.20.1</version>
+                        <version>2.21.0</version>
                     </dependency>
                 </dependencies>
-                <version>2.20.1</version>
+                <version>2.21.0</version>
                 <configuration>
+		    <includes>
+		        <include>**/Test*.java</include>
+		    </includes>
                     <excludes>
                         <exclude>**/TestUtils.java</exclude>
                         <exclude>**/TestSourceOperator.java</exclude>
                     </excludes>
                     <trimStackTrace>false</trimStackTrace>
                     <argLine> -Xms16m -Xmx16m </argLine> <!--ADD TEST JVM ARGS HERE i.e '-Xms8m -Xmx8m' to limit memory to 8m -->
-                    <groups>edu.berkeley.cs186.database.categories.HW${HW}Tests</groups>
                 </configuration>
             </plugin>
         </plugins>
