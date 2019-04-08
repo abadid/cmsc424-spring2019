@@ -12,7 +12,7 @@ We will not be using the virtual machine environment that we've been using for t
 
 Or if you don't want to use IDE, you can also do the same thing through command lines:
 
-    ```bash
+```bash
     # use MacBook
     brew install maven
     cd project4
@@ -20,7 +20,7 @@ Or if you don't want to use IDE, you can also do the same thing through command 
     mvn package -Pdist -DskipTests
     # build code and run unit tests
     mvn package -Pdist
-    ```
+```
 
 ## **The Project Files**
 
