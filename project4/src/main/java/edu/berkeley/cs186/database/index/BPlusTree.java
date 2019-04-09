@@ -154,8 +154,7 @@ public class BPlusTree implements Closeable {
 	 * Optional.empty()
 	 */
 	public Optional<RecordId> get(BaseTransaction transaction, DataBox key) {
-		typecheck(key);
-		return root.get(transaction, key).getKey(key);
+		throw new UnsupportedOperationException("Implement this.");
 	}
 
 	/**
@@ -198,8 +197,7 @@ public class BPlusTree implements Closeable {
 	 * points.
 	 */
 	public Iterator<RecordId> scanAll(BaseTransaction transaction) {
-		// TODO(hw2): Return a BPlusTreeIterator.
-		return new BPlusTreeIterator(transaction);
+		throw new UnsupportedOperationException("Implement this.");
 	}
 
 	/**
@@ -224,9 +222,7 @@ public class BPlusTree implements Closeable {
 	 * points.
 	 */
 	public Iterator<RecordId> scanGreaterEqual(BaseTransaction transaction, DataBox key) {
-		typecheck(key);
-		// TODO(hw2): Return a BPlusTreeIterator.
-		return new BPlusTreeIterator(transaction, key);
+		throw new UnsupportedOperationException("Implement this.");
 	}
 
 	/**
@@ -238,20 +234,7 @@ public class BPlusTree implements Closeable {
 	 * rid); // Sucess :) tree.put(key, rid); // BPlusTreeException :(
 	 */
 	public void put(BaseTransaction transaction, DataBox key, RecordId rid) throws BPlusTreeException {
-		typecheck(key);
-		Optional<Pair<DataBox, Integer>> split = root.put(transaction, key, rid);
-
-		if (split.isPresent()) {
-			DataBox splitKey = split.get().getFirst();
-			int splitPageNum = split.get().getSecond();
-			List<DataBox> keys = new ArrayList<DataBox>();
-			List<Integer> children = new ArrayList<Integer>();
-
-			children.add(root.getPage().getPageNum());
-			children.add(splitPageNum);
-			keys.add(splitKey);
-			root = new InnerNode(metadata, keys, children, transaction);
-		}
+		throw new UnsupportedOperationException("Implement this.");
 	}
 
 	/**
@@ -271,23 +254,7 @@ public class BPlusTree implements Closeable {
 	 */
 	public void bulkLoad(BaseTransaction transaction, Iterator<Pair<DataBox, RecordId>> data, float fillFactor)
 			throws BPlusTreeException {
-
-		while (data.hasNext()) {
-
-			Optional<Pair<DataBox, Integer>> split = root.bulkLoad(transaction, data, fillFactor);
-			if (split.isPresent()) {
-				DataBox splitKey = split.get().getFirst();
-				int splitPageNum = split.get().getSecond();
-				List<DataBox> keys = new ArrayList<DataBox>();
-				List<Integer> children = new ArrayList<Integer>();
-
-				children.add(root.getPage().getPageNum());
-				children.add(splitPageNum);
-				keys.add(splitKey);
-				root = new InnerNode(metadata, keys, children, transaction);
-			}
-
-		}
+		throw new UnsupportedOperationException("Implement this.");
 	}
 
 	/**
@@ -300,8 +267,7 @@ public class BPlusTree implements Closeable {
 	 * tree.get(key); // Optional.empty()
 	 */
 	public void remove(BaseTransaction transaction, DataBox key) {
-		typecheck(key);
-		root.remove(transaction, key);
+		throw new UnsupportedOperationException("Implement this.");
 	}
 
 	// Helpers /////////////////////////////////////////////////////////////////
