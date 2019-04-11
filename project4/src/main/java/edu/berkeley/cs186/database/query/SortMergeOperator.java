@@ -42,24 +42,9 @@ public class SortMergeOperator extends JoinOperator {
      *
      */
     private class SortMergeIterator extends JoinIterator {
-        /**
-        * Some member variables are provided for guidance, but there are many possible solutions.
-        * You should implement the solution that's best for you, using any member variables you need.
-        * You're free to use these member variables, but you're not obligated to.
-        */
-
-        //private String leftTableName;
-        //private String rightTableName;
-        //private RecordIterator leftIterator;
-        //private RecordIterator rightIterator;
-        //private Record leftRecord;
-        //private Record nextRecord;
-        //private Record rightRecord;
-        //private boolean marked;
-
         public SortMergeIterator() throws QueryPlanException, DatabaseException {
             super();
-            throw new UnsupportedOperationException("TODO(Project 5): implement");
+            return;
         }
 
         /**
@@ -68,7 +53,7 @@ public class SortMergeOperator extends JoinOperator {
          * @return true if this iterator has another record to yield, otherwise false
          */
         public boolean hasNext() {
-            throw new UnsupportedOperationException("TODO(Project 5): implement");
+            return false;
         }
 
         /**
@@ -78,7 +63,7 @@ public class SortMergeOperator extends JoinOperator {
          * @throws NoSuchElementException if there are no more Records to yield
          */
         public Record next() {
-            throw new UnsupportedOperationException("TODO(Project 5): implement");
+            throw new NoSuchElementException();
         }
 
         public void remove() {
