@@ -16,7 +16,6 @@ public class SortMergeOperator extends JoinOperator {
                              Database.Transaction transaction) throws QueryPlanException, DatabaseException {
         super(leftSource, rightSource, leftColumnName, rightColumnName, transaction, JoinType.SORTMERGE);
 
-        // for HW4
         this.stats = this.estimateStats();
         this.cost = this.estimateIOCost();
     }
@@ -48,18 +47,51 @@ public class SortMergeOperator extends JoinOperator {
         * You're free to use these member variables, but you're not obligated to.
         */
 
-        //private String leftTableName;
-        //private String rightTableName;
-        //private RecordIterator leftIterator;
-        //private RecordIterator rightIterator;
-        //private Record leftRecord;
-        //private Record nextRecord;
-        //private Record rightRecord;
-        //private boolean marked;
+        private String leftTableName;
+        private String rightTableName;
+        private RecordIterator leftIterator;
+        private RecordIterator rightIterator;
+        private Record leftRecord;
+        private Record nextRecord;
+        private Record rightRecord;
+        private LR_RecordComparator lr_comparator = new LR_RecordComparator();
 
         public SortMergeIterator() throws QueryPlanException, DatabaseException {
             super();
             throw new UnsupportedOperationException("TODO(Project 5): implement");
+        }
+
+        private void resetRightRecord() {
+            this.rightIterator.reset();
+            assert(rightIterator.hasNext());
+            rightRecord = rightIterator.next();
+            rightIterator.mark();
+        }
+
+        private void nextLeftRecord() throws DatabaseException {
+            if (!leftIterator.hasNext()) { throw new DatabaseException("All Done!"); }
+            leftRecord = leftIterator.next();
+        }
+
+        private void fetchNextRecord() throws DatabaseException {
+            if (this.leftRecord == null) { throw new DatabaseException("No new record to fetch"); }
+            this.nextRecord = null;
+            do {
+                if (this.rightRecord != null) {
+                    DataBox leftJoinValue = this.leftRecord.getValues().get(SortMergeOperator.this.getLeftColumnIndex());
+                    DataBox rightJoinValue = this.rightRecord.getValues().get(SortMergeOperator.this.getRightColumnIndex());
+                    if (leftJoinValue.equals(rightJoinValue)) {
+                        List<DataBox> leftValues = new ArrayList<>(this.leftRecord.getValues());
+                        List<DataBox> rightValues = new ArrayList<>(rightRecord.getValues());
+                        leftValues.addAll(rightValues);
+                        this.nextRecord = new Record(leftValues);
+                    }
+                    this.rightRecord = rightIterator.hasNext() ? rightIterator.next() : null;
+                } else {
+                    nextLeftRecord();
+                    resetRightRecord();
+                }
+            } while (!hasNext());
         }
 
         /**
