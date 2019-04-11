@@ -76,7 +76,7 @@ public class BNLJOperator extends JoinOperator {
 
         public BNLJIterator() throws QueryPlanException, DatabaseException {
             super();
-            throw new UnsupportedOperationException("TODO(project 5): implement");
+            throw new UnsupportedOperationException("TODO(Project 5): implement");
         }
 
         /**
@@ -85,7 +85,7 @@ public class BNLJOperator extends JoinOperator {
          * @return true if this iterator has another record to yield, otherwise false
          */
         public boolean hasNext() {
-            throw new UnsupportedOperationException("TODO(project 5): implement");
+            throw new UnsupportedOperationException("TODO(Project 5): implement");
         }
 
         /**
@@ -95,7 +95,7 @@ public class BNLJOperator extends JoinOperator {
          * @throws NoSuchElementException if there are no more Records to yield
          */
         public Record next() {
-            throw new UnsupportedOperationException("TODO(project 5): implement");
+            throw new UnsupportedOperationException("TODO(Project 5): implement");
         }
 
         public void remove() {
