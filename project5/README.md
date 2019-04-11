@@ -109,11 +109,5 @@ The tests we provide to you for this project are under `TestTable` for part 1, `
 mvn clean test -D Proj=5
 ```
 
-Or run all of them:
-
-```bash
-mvn package -Pdist
-```
-
 ## Submitting
 
