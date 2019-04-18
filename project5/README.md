@@ -72,7 +72,6 @@ The `query` directory contains what are called query operators. These are operat
 
 In lecture, we sometimes use the words `block` and `page` interchangeably to describe a single unit of transfer from disc. The notion of a `block` when discussing join algorithms is different however. A `page` is a single unit of transfer from disc, and a  `block` is one or more `pages`. All uses of `block` in this project refer to this alternate definition.
 
-**Besides when the comments tell you that you can do something in memory, everything else should be streamed. You should not hold more pages in memory at once than the given algorithm says you are allowed to.**
 
 ### 1. Table Iterators
 
@@ -90,12 +89,17 @@ Move to the `query` directory. You may first want to take a look at `SNLJOperato
 
 Complete implementing `SortOperator.java`. The tests in `TestSortOperator` should pass once this is complete.
 
+**Besides when the comments tell you that you can do something in memory, everything else should be streamed. You should not hold more pages in memory at once than the given algorithm says you are allowed to.**
+
+*Hint:* To sort records in a table, you have to get `Iterator<Record>` via `getBlockIterator`.
 
 ### 4: Sort Merge Join
 
 Complete implementing `SortMergeOperator.java`. The sort phase of this join should use your previously implemented `SortOperator#sort` method. Note that we do not do the optimization discussed in lecture where the join happens during the last pass of sorting the two tables. We keep the sort phase completely separate from the join phase. The SortMerge tests in `TestJoinOperator` should pass once this is complete.
 
 In the hidden tests, we may test `SortMergeOperator` independently of `SortOperator` by replacing your sort with the staff solution, so make sure it functions as described.
+
+*Hint:* To merge join two tables, you have to construct two `SortOpertor` for them respectively.
 
 
 ## Testing
