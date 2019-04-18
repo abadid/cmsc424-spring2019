@@ -19,8 +19,8 @@ import edu.berkeley.cs186.database.table.stats.TableStats;
 public abstract class JoinOperator extends QueryOperator {
     public enum JoinType {
         SNLJ,
-        PNLJ,
         BNLJ,
+        BNLJOPTIMIZED,
         GRACEHASH,
         SORTMERGE
     }

@@ -65,12 +65,7 @@ The `query` directory contains what are called query operators. These are operat
 `JoinOperator` is the base class that join operators you will implement extend. It contains any methods you might need to deal with tables through the current running transaction. This means you should not deal directly with `Table` objects in the `Query` directory, but only through methods given through the current transaction.
 
 
-
 ## Your Tasks
-
-### Notes Before You Begin
-
-In lecture, we sometimes use the words `block` and `page` interchangeably to describe a single unit of transfer from disc. The notion of a `block` when discussing join algorithms is different however. A `page` is a single unit of transfer from disc, and a  `block` is one or more `pages`. All uses of `block` in this project refer to this alternate definition.
 
 
 ### 1. Table Iterators
@@ -83,7 +78,16 @@ In the `table` directory, fill in the classes `Table#RIDPageIterator` and `Table
 
 ### 2. Nested Loops Joins
 
-Move to the `query` directory. You may first want to take a look at `SNLJOperator` (Simple Nested Loop Join). Complete `PNLJOperator` and `BNLJOperator`. The PNLJ and BNLJ tests in `TestJoinOperator` should pass once this is complete.
+Move to the `query` directory. You may first want to take a look at `SNLJOperator`. Complete `BNLJOperator` and `BNLJOptimizedOperator`. The BNLJ and Optimized BNLJ tests in `TestJoinOperator` should pass once this is complete.
+
+- SNLJ: Simple Nested Loop Join
+- BNLJ: Block Nested Loop Join
+- BNLJOptimized: Optimized Block Nested Loop Join
+
+We sometimes use the words `block` and `page` interchangeably to describe a single unit of transfer from disc. 
+The notion of a `block` when discussing join algorithms is different however. A `page` is a single unit of transfer from disc, and a  `block` is one or more `pages`.
+Sometimes BNLJ is also called PNLJ. Similarly, BNLJOptimized is called BNLJ.
+
 
 ### 3: External Sort
 

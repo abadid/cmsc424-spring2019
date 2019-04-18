@@ -112,7 +112,7 @@ public class TestOptimizationJoins {
         Iterator<Record> queryOutput = query.executeOptimal();
 
         QueryOperator finalOperator = query.getFinalOperator();
-        assert(finalOperator.toString().contains("BNLJ"));
+        assert(finalOperator.toString().contains("BNLJOPTIMIZED"));
 
     }
 

@@ -10,18 +10,18 @@ import edu.berkeley.cs186.database.io.Page;
 import edu.berkeley.cs186.database.table.Record;
 
 public class BNLJOperator extends JoinOperator {
-    private int numBuffers;
-
     public BNLJOperator(QueryOperator leftSource,
                         QueryOperator rightSource,
                         String leftColumnName,
                         String rightColumnName,
                         Database.Transaction transaction) throws QueryPlanException, DatabaseException {
-        super(leftSource, rightSource, leftColumnName, rightColumnName, transaction, JoinType.BNLJ);
+        super(leftSource,
+              rightSource,
+              leftColumnName,
+              rightColumnName,
+              transaction,
+              JoinType.BNLJ);
 
-        this.numBuffers = transaction.getNumMemoryPages();
-
-        // for HW4
         this.stats = this.estimateStats();
         this.cost = this.estimateIOCost();
     }
@@ -30,24 +30,14 @@ public class BNLJOperator extends JoinOperator {
         return new BNLJIterator();
     }
 
-    public int estimateIOCost() {
-        //This method implements the the IO cost estimation of the Block Nested Loop Join
-
-        int usableBuffers = numBuffers -
-                            2; //Common mistake have to first calculate the number of usable buffers
-
-        int numLeftPages = getLeftSource().getStats().getNumPages();
-
-        int numRightPages = getRightSource().getStats().getNumPages();
-
-        return ((int) Math.ceil((double) numLeftPages / (double) usableBuffers)) * numRightPages +
-               numLeftPages;
-
+    public int estimateIOCost() throws QueryPlanException {
+        //does nothing
+        return 0;
     }
 
     /**
      * BNLJ: Block Nested Loop Join
-     *  See lecture slides.
+     *  See Section 12.5.2 of the textbook.
      *
      * An implementation of Iterator that provides an iterator interface for this operator.
      *
@@ -58,7 +48,6 @@ public class BNLJOperator extends JoinOperator {
      *    This means you'll probably want to add more methods than those given (Once again,
      *    SNLJOperator.java might prove to be a useful reference).
      */
-
     private class BNLJIterator extends JoinIterator {
         /**
          * Some member variables are provided for guidance, but there are many possible solutions.
@@ -101,6 +90,6 @@ public class BNLJOperator extends JoinOperator {
         public void remove() {
             throw new UnsupportedOperationException();
         }
-
     }
 }
+

@@ -325,7 +325,7 @@ public class QueryPlan {
         int minCost = Integer.MAX_VALUE;
         List<QueryOperator> allJoins = new ArrayList<QueryOperator>();
         allJoins.add(new SNLJOperator(leftOp, rightOp, leftColumn, rightColumn, this.transaction));
-        allJoins.add(new BNLJOperator(leftOp, rightOp, leftColumn, rightColumn, this.transaction));
+        allJoins.add(new BNLJOptimizedOperator(leftOp, rightOp, leftColumn, rightColumn, this.transaction));
 
         for (QueryOperator join : allJoins) {
             int joinCost = join.estimateIOCost();

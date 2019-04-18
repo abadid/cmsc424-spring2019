@@ -121,37 +121,6 @@ public class TestJoinOperator {
 
     @Test
     @Category(PublicTests.class)
-    public void testSimpleJoinPNLJ() throws QueryPlanException, DatabaseException, IOException {
-        TestSourceOperator sourceOperator = new TestSourceOperator();
-        File tempDir = tempFolder.newFolder("joinTest");
-        Database.Transaction transaction = new Database(tempDir.getAbsolutePath()).beginTransaction();
-        JoinOperator joinOperator = new PNLJOperator(sourceOperator, sourceOperator, "int", "int",
-                transaction);
-
-        Iterator<Record> outputIterator = joinOperator.iterator();
-        int numRecords = 0;
-
-        List<DataBox> expectedRecordValues = new ArrayList<DataBox>();
-        expectedRecordValues.add(new BoolDataBox(true));
-        expectedRecordValues.add(new IntDataBox(1));
-        expectedRecordValues.add(new StringDataBox("abcde", 5));
-        expectedRecordValues.add(new FloatDataBox(1.2f));
-        expectedRecordValues.add(new BoolDataBox(true));
-        expectedRecordValues.add(new IntDataBox(1));
-        expectedRecordValues.add(new StringDataBox("abcde", 5));
-        expectedRecordValues.add(new FloatDataBox(1.2f));
-        Record expectedRecord = new Record(expectedRecordValues);
-
-        while (outputIterator.hasNext()) {
-            assertEquals(expectedRecord, outputIterator.next());
-            numRecords++;
-        }
-
-        assertEquals(100 * 100, numRecords);
-    }
-
-    @Test
-    @Category(PublicTests.class)
     public void testSimpleJoinBNLJ() throws QueryPlanException, DatabaseException, IOException {
         TestSourceOperator sourceOperator = new TestSourceOperator();
         File tempDir = tempFolder.newFolder("joinTest");
@@ -183,7 +152,38 @@ public class TestJoinOperator {
 
     @Test
     @Category(PublicTests.class)
-    public void testSimplePNLJOutputOrder() throws QueryPlanException, DatabaseException, IOException {
+    public void testSimpleJoinBNLJOptimized() throws QueryPlanException, DatabaseException, IOException {
+        TestSourceOperator sourceOperator = new TestSourceOperator();
+        File tempDir = tempFolder.newFolder("joinTest");
+        Database.Transaction transaction = new Database(tempDir.getAbsolutePath()).beginTransaction();
+        JoinOperator joinOperator = new BNLJOptimizedOperator(sourceOperator, sourceOperator, "int", "int",
+                transaction);
+
+        Iterator<Record> outputIterator = joinOperator.iterator();
+        int numRecords = 0;
+
+        List<DataBox> expectedRecordValues = new ArrayList<DataBox>();
+        expectedRecordValues.add(new BoolDataBox(true));
+        expectedRecordValues.add(new IntDataBox(1));
+        expectedRecordValues.add(new StringDataBox("abcde", 5));
+        expectedRecordValues.add(new FloatDataBox(1.2f));
+        expectedRecordValues.add(new BoolDataBox(true));
+        expectedRecordValues.add(new IntDataBox(1));
+        expectedRecordValues.add(new StringDataBox("abcde", 5));
+        expectedRecordValues.add(new FloatDataBox(1.2f));
+        Record expectedRecord = new Record(expectedRecordValues);
+
+        while (outputIterator.hasNext()) {
+            assertEquals(expectedRecord, outputIterator.next());
+            numRecords++;
+        }
+
+        assertEquals(100 * 100, numRecords);
+    }
+
+    @Test
+    @Category(PublicTests.class)
+    public void testSimpleBNLJOutputOrder() throws QueryPlanException, DatabaseException, IOException {
         File tempDir = tempFolder.newFolder("joinTest");
         Database d = new Database(tempDir.getAbsolutePath());
         Database.Transaction transaction = d.beginTransaction();
@@ -231,7 +231,7 @@ public class TestJoinOperator {
 
         QueryOperator s1 = new SequentialScanOperator(transaction, "leftTable");
         QueryOperator s2 = new SequentialScanOperator(transaction, "rightTable");
-        QueryOperator joinOperator = new PNLJOperator(s1, s2, "int", "int", transaction);
+        QueryOperator joinOperator = new BNLJOperator(s1, s2, "int", "int", transaction);
 
         int count = 0;
         Iterator<Record> outputIterator = joinOperator.iterator();
@@ -384,7 +384,7 @@ public class TestJoinOperator {
 
     @Test
     @Category(PublicTests.class)
-    public void testBNLJDiffOutPutThanPNLJ() throws QueryPlanException, DatabaseException, IOException {
+    public void testBNLJOptimizedDiffOutPutThanBNLJ() throws QueryPlanException, DatabaseException, IOException {
         File tempDir = tempFolder.newFolder("joinTest");
         Database d = new Database(tempDir.getAbsolutePath(), 4);
         Database.Transaction transaction = d.beginTransaction();
@@ -438,7 +438,7 @@ public class TestJoinOperator {
         }
         QueryOperator s1 = new SequentialScanOperator(transaction, "leftTable");
         QueryOperator s2 = new SequentialScanOperator(transaction, "rightTable");
-        QueryOperator joinOperator = new BNLJOperator(s1, s2, "int", "int", transaction);
+        QueryOperator joinOperator = new BNLJOptimizedOperator(s1, s2, "int", "int", transaction);
         Iterator<Record> outputIterator = joinOperator.iterator();
         int count = 0;
         while (outputIterator.hasNext()) {
