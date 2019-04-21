@@ -1,14 +1,14 @@
-package edu.berkeley.cs186.database;
+package edu.umd.cs424.database;
 
-import edu.berkeley.cs186.database.categories.*;
-import edu.berkeley.cs186.database.concurrency.LockType;
-import edu.berkeley.cs186.database.databox.DataBox;
-import edu.berkeley.cs186.database.databox.IntDataBox;
-import edu.berkeley.cs186.database.query.QueryPlan;
-import edu.berkeley.cs186.database.query.QueryPlanException;
-import edu.berkeley.cs186.database.table.Record;
-import edu.berkeley.cs186.database.table.RecordId;
-import edu.berkeley.cs186.database.table.Schema;
+import edu.umd.cs424.database.categories.*;
+import edu.umd.cs424.database.concurrency.LockType;
+import edu.umd.cs424.database.databox.DataBox;
+import edu.umd.cs424.database.databox.IntDataBox;
+import edu.umd.cs424.database.query.QueryPlan;
+import edu.umd.cs424.database.query.QueryPlanException;
+import edu.umd.cs424.database.table.Record;
+import edu.umd.cs424.database.table.RecordId;
+import edu.umd.cs424.database.table.Schema;
 import org.junit.*;
 import org.junit.experimental.categories.Category;
 import org.junit.rules.DisableOnDebug;

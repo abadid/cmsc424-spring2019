@@ -1,7 +1,7 @@
-package edu.berkeley.cs186.database.index;
+package edu.umd.cs424.database.index;
 
-import edu.berkeley.cs186.database.databox.Type;
-import edu.berkeley.cs186.database.io.PageAllocator;
+import edu.umd.cs424.database.databox.Type;
+import edu.umd.cs424.database.io.PageAllocator;
 
 /** Metadata about a B+ tree. */
 class BPlusTreeMetadata {

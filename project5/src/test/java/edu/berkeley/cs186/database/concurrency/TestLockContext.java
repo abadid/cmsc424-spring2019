@@ -1,15 +1,15 @@
-package edu.berkeley.cs186.database.concurrency;
+package edu.umd.cs424.database.concurrency;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import edu.berkeley.cs186.database.TimeoutScaling;
-import edu.berkeley.cs186.database.categories.*;
-import edu.berkeley.cs186.database.BaseTransaction;
-import edu.berkeley.cs186.database.LoggingLockManager;
-import edu.berkeley.cs186.database.common.Pair;
+import edu.umd.cs424.database.TimeoutScaling;
+import edu.umd.cs424.database.categories.*;
+import edu.umd.cs424.database.BaseTransaction;
+import edu.umd.cs424.database.LoggingLockManager;
+import edu.umd.cs424.database.common.Pair;
 
 import org.junit.*;
 import org.junit.experimental.categories.Category;

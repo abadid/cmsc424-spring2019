@@ -1,4 +1,4 @@
-package edu.berkeley.cs186.database.table;
+package edu.umd.cs424.database.table;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -11,8 +11,8 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
-import edu.berkeley.cs186.database.categories.*;
-import edu.berkeley.cs186.database.concurrency.DummyLockContext;
+import edu.umd.cs424.database.categories.*;
+import edu.umd.cs424.database.concurrency.DummyLockContext;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
@@ -23,12 +23,12 @@ import org.junit.experimental.categories.Category;
 import org.junit.rules.TemporaryFolder;
 import org.junit.runners.MethodSorters;
 
-import edu.berkeley.cs186.database.DatabaseException;
-import edu.berkeley.cs186.database.TestUtils;
-import edu.berkeley.cs186.database.common.BacktrackingIterator;
-import edu.berkeley.cs186.database.databox.IntDataBox;
-import edu.berkeley.cs186.database.databox.Type;
-import edu.berkeley.cs186.database.io.Page;
+import edu.umd.cs424.database.DatabaseException;
+import edu.umd.cs424.database.TestUtils;
+import edu.umd.cs424.database.common.BacktrackingIterator;
+import edu.umd.cs424.database.databox.IntDataBox;
+import edu.umd.cs424.database.databox.Type;
+import edu.umd.cs424.database.io.Page;
 
 @Category(Proj5Tests.class)
 public class TestTable {

@@ -1,7 +1,7 @@
-package edu.berkeley.cs186.database;
+package edu.umd.cs424.database;
 
-import edu.berkeley.cs186.database.concurrency.LockContext;
-import edu.berkeley.cs186.database.concurrency.LockManager;
+import edu.umd.cs424.database.concurrency.LockContext;
+import edu.umd.cs424.database.concurrency.LockManager;
 
 import java.util.*;
 

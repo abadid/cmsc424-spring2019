@@ -1,4 +1,4 @@
-package edu.berkeley.cs186.database.index;
+package edu.umd.cs424.database.index;
 
 public class BPlusTreeException extends Exception {
     public BPlusTreeException() {

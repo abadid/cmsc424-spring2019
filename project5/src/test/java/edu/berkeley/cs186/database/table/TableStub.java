@@ -1,11 +1,11 @@
-package edu.berkeley.cs186.database.table;
+package edu.umd.cs424.database.table;
 
-import edu.berkeley.cs186.database.BaseTransaction;
-import edu.berkeley.cs186.database.DatabaseException;
-import edu.berkeley.cs186.database.common.ArrayBacktrackingIterator;
-import edu.berkeley.cs186.database.common.BacktrackingIterator;
-import edu.berkeley.cs186.database.concurrency.LockContext;
-import edu.berkeley.cs186.database.io.Page;
+import edu.umd.cs424.database.BaseTransaction;
+import edu.umd.cs424.database.DatabaseException;
+import edu.umd.cs424.database.common.ArrayBacktrackingIterator;
+import edu.umd.cs424.database.common.BacktrackingIterator;
+import edu.umd.cs424.database.concurrency.LockContext;
+import edu.umd.cs424.database.io.Page;
 
 import java.util.Iterator;
 

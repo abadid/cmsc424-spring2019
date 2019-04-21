@@ -1,4 +1,4 @@
-package edu.berkeley.cs186.database.table.stats;
+package edu.umd.cs424.database.table.stats;
 
 import java.util.Objects;
 import java.util.HashSet;

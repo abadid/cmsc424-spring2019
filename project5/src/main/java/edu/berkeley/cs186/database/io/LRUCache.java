@@ -1,4 +1,4 @@
-package edu.berkeley.cs186.database.io;
+package edu.umd.cs424.database.io;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

@@ -1,20 +1,20 @@
-package edu.berkeley.cs186.database.query;
+package edu.umd.cs424.database.query;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-import edu.berkeley.cs186.database.DatabaseException;
-import edu.berkeley.cs186.database.databox.DataBox;
-import edu.berkeley.cs186.database.databox.FloatDataBox;
-import edu.berkeley.cs186.database.databox.IntDataBox;
-import edu.berkeley.cs186.database.databox.Type;
-import edu.berkeley.cs186.database.databox.TypeId;
-import edu.berkeley.cs186.database.table.MarkerRecord;
-import edu.berkeley.cs186.database.table.Record;
-import edu.berkeley.cs186.database.table.Schema;
-import edu.berkeley.cs186.database.table.stats.TableStats;
+import edu.umd.cs424.database.DatabaseException;
+import edu.umd.cs424.database.databox.DataBox;
+import edu.umd.cs424.database.databox.FloatDataBox;
+import edu.umd.cs424.database.databox.IntDataBox;
+import edu.umd.cs424.database.databox.Type;
+import edu.umd.cs424.database.databox.TypeId;
+import edu.umd.cs424.database.table.MarkerRecord;
+import edu.umd.cs424.database.table.Record;
+import edu.umd.cs424.database.table.Schema;
+import edu.umd.cs424.database.table.stats.TableStats;
 
 public class ProjectOperator extends QueryOperator {
     private List<String> columns;

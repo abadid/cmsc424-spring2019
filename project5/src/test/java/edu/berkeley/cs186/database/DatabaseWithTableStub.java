@@ -1,10 +1,10 @@
-package edu.berkeley.cs186.database;
+package edu.umd.cs424.database;
 
-import edu.berkeley.cs186.database.concurrency.LockContext;
-import edu.berkeley.cs186.database.concurrency.LockManager;
-import edu.berkeley.cs186.database.table.Schema;
-import edu.berkeley.cs186.database.table.Table;
-import edu.berkeley.cs186.database.table.TableStub;
+import edu.umd.cs424.database.concurrency.LockContext;
+import edu.umd.cs424.database.concurrency.LockManager;
+import edu.umd.cs424.database.table.Schema;
+import edu.umd.cs424.database.table.Table;
+import edu.umd.cs424.database.table.TableStub;
 
 public class DatabaseWithTableStub extends Database {
     public DatabaseWithTableStub(String fileDir) throws DatabaseException {

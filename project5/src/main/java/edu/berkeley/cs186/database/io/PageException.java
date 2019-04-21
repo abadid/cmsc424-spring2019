@@ -1,4 +1,4 @@
-package edu.berkeley.cs186.database.io;
+package edu.umd.cs424.database.io;
 
 /**
  * Exception thrown for errors while paging.

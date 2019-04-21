@@ -1,6 +1,6 @@
-package edu.berkeley.cs186.database.databox;
+package edu.umd.cs424.database.databox;
 
-import edu.berkeley.cs186.database.common.Buffer;
+import edu.umd.cs424.database.common.Buffer;
 
 import java.nio.charset.Charset;
 

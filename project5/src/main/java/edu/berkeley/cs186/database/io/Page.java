@@ -1,9 +1,9 @@
-package edu.berkeley.cs186.database.io;
+package edu.umd.cs424.database.io;
 
-import edu.berkeley.cs186.database.BaseTransaction;
-import edu.berkeley.cs186.database.common.AbstractBuffer;
-import edu.berkeley.cs186.database.common.Buffer;
-import edu.berkeley.cs186.database.concurrency.*;
+import edu.umd.cs424.database.BaseTransaction;
+import edu.umd.cs424.database.common.AbstractBuffer;
+import edu.umd.cs424.database.common.Buffer;
+import edu.umd.cs424.database.concurrency.*;
 
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;

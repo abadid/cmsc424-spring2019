@@ -1,4 +1,4 @@
-package edu.berkeley.cs186.database;
+package edu.umd.cs424.database;
 
 public class DatabaseException extends Exception {
     private String message;

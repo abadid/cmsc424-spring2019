@@ -1,4 +1,4 @@
-package edu.berkeley.cs186.database;
+package edu.umd.cs424.database;
 
 import java.io.File;
 import java.nio.file.Path;
@@ -8,24 +8,24 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
-import edu.berkeley.cs186.database.common.BacktrackingIterator;
-import edu.berkeley.cs186.database.common.Pair;
-import edu.berkeley.cs186.database.concurrency.*;
-import edu.berkeley.cs186.database.databox.DataBox;
-import edu.berkeley.cs186.database.databox.Type;
-import edu.berkeley.cs186.database.index.BPlusTree;
-import edu.berkeley.cs186.database.index.BPlusTreeException;
-import edu.berkeley.cs186.database.io.Page;
-import edu.berkeley.cs186.database.query.QueryPlan;
-import edu.berkeley.cs186.database.query.QueryPlanException;
-import edu.berkeley.cs186.database.query.SortOperator;
-import edu.berkeley.cs186.database.table.Record;
-import edu.berkeley.cs186.database.table.RecordId;
-import edu.berkeley.cs186.database.table.RecordIterator;
-import edu.berkeley.cs186.database.table.Schema;
-import edu.berkeley.cs186.database.table.Table;
-import edu.berkeley.cs186.database.table.stats.TableStats;
-import edu.berkeley.cs186.database.io.PageAllocator.PageIterator;
+import edu.umd.cs424.database.common.BacktrackingIterator;
+import edu.umd.cs424.database.common.Pair;
+import edu.umd.cs424.database.concurrency.*;
+import edu.umd.cs424.database.databox.DataBox;
+import edu.umd.cs424.database.databox.Type;
+import edu.umd.cs424.database.index.BPlusTree;
+import edu.umd.cs424.database.index.BPlusTreeException;
+import edu.umd.cs424.database.io.Page;
+import edu.umd.cs424.database.query.QueryPlan;
+import edu.umd.cs424.database.query.QueryPlanException;
+import edu.umd.cs424.database.query.SortOperator;
+import edu.umd.cs424.database.table.Record;
+import edu.umd.cs424.database.table.RecordId;
+import edu.umd.cs424.database.table.RecordIterator;
+import edu.umd.cs424.database.table.Schema;
+import edu.umd.cs424.database.table.Table;
+import edu.umd.cs424.database.table.stats.TableStats;
+import edu.umd.cs424.database.io.PageAllocator.PageIterator;
 
 public class Database {
     private Map<String, Table> tableLookup;

@@ -1,10 +1,10 @@
-package edu.berkeley.cs186.database;
+package edu.umd.cs424.database;
 
-import edu.berkeley.cs186.database.databox.*;
-import edu.berkeley.cs186.database.query.QueryPlanException;
-import edu.berkeley.cs186.database.query.TestSourceOperator;
-import edu.berkeley.cs186.database.table.Record;
-import edu.berkeley.cs186.database.table.Schema;
+import edu.umd.cs424.database.databox.*;
+import edu.umd.cs424.database.query.QueryPlanException;
+import edu.umd.cs424.database.query.TestSourceOperator;
+import edu.umd.cs424.database.table.Record;
+import edu.umd.cs424.database.table.Schema;
 
 import java.util.ArrayList;
 import java.util.Arrays;

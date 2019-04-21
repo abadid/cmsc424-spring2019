@@ -1,6 +1,6 @@
-package edu.berkeley.cs186.database.concurrency;
+package edu.umd.cs424.database.concurrency;
 
-import edu.berkeley.cs186.database.BaseTransaction;
+import edu.umd.cs424.database.BaseTransaction;
 
 public class DummyLockContext extends LockContext {
     public DummyLockContext() {

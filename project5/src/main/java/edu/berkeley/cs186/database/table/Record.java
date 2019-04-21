@@ -1,12 +1,12 @@
-package edu.berkeley.cs186.database.table;
+package edu.umd.cs424.database.table;
 
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.berkeley.cs186.database.common.Buffer;
-import edu.berkeley.cs186.database.databox.DataBox;
-import edu.berkeley.cs186.database.databox.Type;
+import edu.umd.cs424.database.common.Buffer;
+import edu.umd.cs424.database.databox.DataBox;
+import edu.umd.cs424.database.databox.Type;
 
 /** A Record is just list of DataBoxes. */
 public class Record {

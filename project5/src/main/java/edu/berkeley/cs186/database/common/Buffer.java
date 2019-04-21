@@ -1,4 +1,4 @@
-package edu.berkeley.cs186.database.common;
+package edu.umd.cs424.database.common;
 
 public interface Buffer {
     Buffer get(byte[] dst, int offset, int length);

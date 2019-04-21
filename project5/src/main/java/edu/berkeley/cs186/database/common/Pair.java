@@ -1,4 +1,4 @@
-package edu.berkeley.cs186.database.common;
+package edu.umd.cs424.database.common;
 
 /** A simple, immutable, generic pair. */
 public class Pair<A, B> {

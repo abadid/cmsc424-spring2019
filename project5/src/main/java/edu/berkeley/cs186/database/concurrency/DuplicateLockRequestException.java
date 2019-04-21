@@ -1,4 +1,4 @@
-package edu.berkeley.cs186.database.concurrency;
+package edu.umd.cs424.database.concurrency;
 
 public class DuplicateLockRequestException extends RuntimeException {
     private String message;

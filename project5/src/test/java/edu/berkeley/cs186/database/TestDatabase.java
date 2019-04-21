@@ -1,7 +1,7 @@
-package edu.berkeley.cs186.database;
+package edu.umd.cs424.database;
 
-import edu.berkeley.cs186.database.categories.*;
-import edu.berkeley.cs186.database.table.*;
+import edu.umd.cs424.database.categories.*;
+import edu.umd.cs424.database.table.*;
 
 import org.junit.After;
 import org.junit.Before;

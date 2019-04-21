@@ -1,8 +1,8 @@
-package edu.berkeley.cs186.database.io;
+package edu.umd.cs424.database.io;
 
 import static org.junit.Assert.*;
 
-import edu.berkeley.cs186.database.categories.*;
+import edu.umd.cs424.database.categories.*;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;

@@ -1,8 +1,8 @@
-package edu.berkeley.cs186.database.stats;
+package edu.umd.cs424.database.stats;
 
-import edu.berkeley.cs186.database.categories.*;
-import edu.berkeley.cs186.database.concurrency.DummyLockContext;
-import edu.berkeley.cs186.database.table.TableStub;
+import edu.umd.cs424.database.categories.*;
+import edu.umd.cs424.database.concurrency.DummyLockContext;
+import edu.umd.cs424.database.table.TableStub;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.Rule;
@@ -13,18 +13,18 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Random;
 
-import edu.berkeley.cs186.database.table.stats.Histogram;
-import edu.berkeley.cs186.database.TestUtils;
-import edu.berkeley.cs186.database.table.Schema;
-import edu.berkeley.cs186.database.DatabaseException;
-import edu.berkeley.cs186.database.query.QueryPlan.PredicateOperator;
+import edu.umd.cs424.database.table.stats.Histogram;
+import edu.umd.cs424.database.TestUtils;
+import edu.umd.cs424.database.table.Schema;
+import edu.umd.cs424.database.DatabaseException;
+import edu.umd.cs424.database.query.QueryPlan.PredicateOperator;
 
-import edu.berkeley.cs186.database.table.Table;
-import edu.berkeley.cs186.database.table.Record;
-import edu.berkeley.cs186.database.databox.IntDataBox;
-import edu.berkeley.cs186.database.databox.StringDataBox;
-import edu.berkeley.cs186.database.databox.FloatDataBox;
-import edu.berkeley.cs186.database.databox.BoolDataBox;
+import edu.umd.cs424.database.table.Table;
+import edu.umd.cs424.database.table.Record;
+import edu.umd.cs424.database.databox.IntDataBox;
+import edu.umd.cs424.database.databox.StringDataBox;
+import edu.umd.cs424.database.databox.FloatDataBox;
+import edu.umd.cs424.database.databox.BoolDataBox;
 
 import static org.junit.Assert.*;
 import org.junit.After;

@@ -1,7 +1,7 @@
-package edu.berkeley.cs186.database.concurrency;
+package edu.umd.cs424.database.concurrency;
 
-import edu.berkeley.cs186.database.TimeoutScaling;
-import edu.berkeley.cs186.database.categories.*;
+import edu.umd.cs424.database.TimeoutScaling;
+import edu.umd.cs424.database.categories.*;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;

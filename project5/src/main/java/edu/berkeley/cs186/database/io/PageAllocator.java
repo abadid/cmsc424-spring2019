@@ -1,4 +1,4 @@
-package edu.berkeley.cs186.database.io;
+package edu.umd.cs424.database.io;
 
 import java.io.RandomAccessFile;
 import java.nio.channels.FileChannel;
@@ -19,11 +19,11 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.io.Closeable;
 
-import edu.berkeley.cs186.database.BaseTransaction;
-import edu.berkeley.cs186.database.common.BacktrackingIterator;
-import edu.berkeley.cs186.database.common.Buffer;
-import edu.berkeley.cs186.database.concurrency.DummyLockContext;
-import edu.berkeley.cs186.database.concurrency.LockContext;
+import edu.umd.cs424.database.BaseTransaction;
+import edu.umd.cs424.database.common.BacktrackingIterator;
+import edu.umd.cs424.database.common.Buffer;
+import edu.umd.cs424.database.concurrency.DummyLockContext;
+import edu.umd.cs424.database.concurrency.LockContext;
 
 /**
  * A PageAllocation system for an OS paging system. Provides memory-mapped paging from the OS, an

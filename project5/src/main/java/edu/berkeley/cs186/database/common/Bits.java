@@ -1,4 +1,4 @@
-package edu.berkeley.cs186.database.common;
+package edu.umd.cs424.database.common;
 
 public class Bits {
     public enum Bit { ZERO, ONE };

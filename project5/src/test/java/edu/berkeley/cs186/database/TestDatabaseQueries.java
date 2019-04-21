@@ -1,8 +1,8 @@
-package edu.berkeley.cs186.database;
+package edu.umd.cs424.database;
 
-import edu.berkeley.cs186.database.categories.*;
-import edu.berkeley.cs186.database.concurrency.DummyLockManager;
-import edu.berkeley.cs186.database.databox.*;
+import edu.umd.cs424.database.categories.*;
+import edu.umd.cs424.database.concurrency.DummyLockManager;
+import edu.umd.cs424.database.databox.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -20,12 +20,12 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import edu.berkeley.cs186.database.databox.FloatDataBox;
-import edu.berkeley.cs186.database.databox.StringDataBox;
-import edu.berkeley.cs186.database.query.QueryPlan;
-import edu.berkeley.cs186.database.query.QueryPlanException;
-import edu.berkeley.cs186.database.table.Record;
-import edu.berkeley.cs186.database.table.Schema;
+import edu.umd.cs424.database.databox.FloatDataBox;
+import edu.umd.cs424.database.databox.StringDataBox;
+import edu.umd.cs424.database.query.QueryPlan;
+import edu.umd.cs424.database.query.QueryPlanException;
+import edu.umd.cs424.database.table.Record;
+import edu.umd.cs424.database.table.Schema;
 import static org.junit.Assert.*;
 
 @Category({HW99Tests.class})

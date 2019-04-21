@@ -1,16 +1,16 @@
-package edu.berkeley.cs186.database.table.stats;
+package edu.umd.cs424.database.table.stats;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.berkeley.cs186.database.BaseTransaction;
-import edu.berkeley.cs186.database.databox.DataBox;
-import edu.berkeley.cs186.database.databox.Type;
-import edu.berkeley.cs186.database.io.Page;
-import edu.berkeley.cs186.database.query.QueryPlan.PredicateOperator;
-import edu.berkeley.cs186.database.table.Record;
-import edu.berkeley.cs186.database.table.Schema;
-import edu.berkeley.cs186.database.table.Table;
+import edu.umd.cs424.database.BaseTransaction;
+import edu.umd.cs424.database.databox.DataBox;
+import edu.umd.cs424.database.databox.Type;
+import edu.umd.cs424.database.io.Page;
+import edu.umd.cs424.database.query.QueryPlan.PredicateOperator;
+import edu.umd.cs424.database.table.Record;
+import edu.umd.cs424.database.table.Schema;
+import edu.umd.cs424.database.table.Table;
 
 /**
  * Every table in a database maintains a set of table statistics which are

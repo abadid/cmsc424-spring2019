@@ -1,4 +1,4 @@
-package edu.berkeley.cs186.database.index;
+package edu.umd.cs424.database.index;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-import edu.berkeley.cs186.database.TimeoutScaling;
+import edu.umd.cs424.database.TimeoutScaling;
 import org.junit.*;
 import org.junit.experimental.categories.Category;
 import org.junit.rules.DisableOnDebug;
@@ -18,13 +18,13 @@ import org.junit.rules.TemporaryFolder;
 import org.junit.rules.TestRule;
 import org.junit.rules.Timeout;
 
-import edu.berkeley.cs186.database.categories.*;
-import edu.berkeley.cs186.database.common.Pair;
-import edu.berkeley.cs186.database.databox.DataBox;
-import edu.berkeley.cs186.database.databox.IntDataBox;
-import edu.berkeley.cs186.database.databox.Type;
-import edu.berkeley.cs186.database.io.PageAllocator;
-import edu.berkeley.cs186.database.table.RecordId;
+import edu.umd.cs424.database.categories.*;
+import edu.umd.cs424.database.common.Pair;
+import edu.umd.cs424.database.databox.DataBox;
+import edu.umd.cs424.database.databox.IntDataBox;
+import edu.umd.cs424.database.databox.Type;
+import edu.umd.cs424.database.io.PageAllocator;
+import edu.umd.cs424.database.table.RecordId;
 
 @Category(HW2Tests.class)
 public class TestInnerNode {

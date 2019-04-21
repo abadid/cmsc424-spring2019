@@ -1,6 +1,6 @@
-package edu.berkeley.cs186.database.table;
+package edu.umd.cs424.database.table;
 
-import edu.berkeley.cs186.database.common.Buffer;
+import edu.umd.cs424.database.common.Buffer;
 
 import java.nio.ByteBuffer;
 import java.util.Objects;

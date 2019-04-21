@@ -1,3 +1,3 @@
-package edu.berkeley.cs186.database.categories;
+package edu.umd.cs424.database.categories;
 
 public interface HW5Tests extends HWTests  { /* category marker */ }

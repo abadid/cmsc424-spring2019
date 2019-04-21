@@ -1,4 +1,4 @@
-package edu.berkeley.cs186.database.index;
+package edu.umd.cs424.database.index;
 
 import java.io.Closeable;
 import java.io.IOException;
@@ -6,17 +6,17 @@ import java.io.FileWriter;
 import java.io.File;
 import java.util.*;
 
-import edu.berkeley.cs186.database.BaseTransaction;
-import edu.berkeley.cs186.database.common.Buffer;
-import edu.berkeley.cs186.database.common.Pair;
-import edu.berkeley.cs186.database.concurrency.LockContext;
-import edu.berkeley.cs186.database.concurrency.LockType;
-import edu.berkeley.cs186.database.concurrency.LockUtil;
-import edu.berkeley.cs186.database.databox.DataBox;
-import edu.berkeley.cs186.database.databox.Type;
-import edu.berkeley.cs186.database.io.Page;
-import edu.berkeley.cs186.database.io.PageAllocator;
-import edu.berkeley.cs186.database.table.RecordId;
+import edu.umd.cs424.database.BaseTransaction;
+import edu.umd.cs424.database.common.Buffer;
+import edu.umd.cs424.database.common.Pair;
+import edu.umd.cs424.database.concurrency.LockContext;
+import edu.umd.cs424.database.concurrency.LockType;
+import edu.umd.cs424.database.concurrency.LockUtil;
+import edu.umd.cs424.database.databox.DataBox;
+import edu.umd.cs424.database.databox.Type;
+import edu.umd.cs424.database.io.Page;
+import edu.umd.cs424.database.io.PageAllocator;
+import edu.umd.cs424.database.table.RecordId;
 
 /**
  * A persistent B+ tree.

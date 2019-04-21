@@ -1,13 +1,13 @@
-package edu.berkeley.cs186.database.query;
+package edu.umd.cs424.database.query;
 
 import java.util.*;
 
-import edu.berkeley.cs186.database.Database;
-import edu.berkeley.cs186.database.DatabaseException;
-import edu.berkeley.cs186.database.common.BacktrackingIterator;
-import edu.berkeley.cs186.database.databox.DataBox;
-import edu.berkeley.cs186.database.io.Page;
-import edu.berkeley.cs186.database.table.Record;
+import edu.umd.cs424.database.Database;
+import edu.umd.cs424.database.DatabaseException;
+import edu.umd.cs424.database.common.BacktrackingIterator;
+import edu.umd.cs424.database.databox.DataBox;
+import edu.umd.cs424.database.io.Page;
+import edu.umd.cs424.database.table.Record;
 
 public class BNLJOperator extends JoinOperator {
     public BNLJOperator(QueryOperator leftSource,

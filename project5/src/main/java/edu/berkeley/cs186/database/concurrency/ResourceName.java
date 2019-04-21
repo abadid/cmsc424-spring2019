@@ -1,4 +1,4 @@
-package edu.berkeley.cs186.database.concurrency;
+package edu.umd.cs424.database.concurrency;
 
 import java.util.Arrays;
 import java.util.ArrayList;

@@ -1,21 +1,21 @@
-package edu.berkeley.cs186.database.concurrency;
+package edu.umd.cs424.database.concurrency;
 
 import java.util.Iterator;
 import java.util.List;
 
-import edu.berkeley.cs186.database.BaseTransaction;
-import edu.berkeley.cs186.database.DatabaseException;
-import edu.berkeley.cs186.database.LoggingLockManager;
-import edu.berkeley.cs186.database.common.BacktrackingIterator;
-import edu.berkeley.cs186.database.databox.DataBox;
-import edu.berkeley.cs186.database.io.Page;
-import edu.berkeley.cs186.database.io.PageAllocator.PageIterator;
-import edu.berkeley.cs186.database.query.QueryPlan;
-import edu.berkeley.cs186.database.table.Record;
-import edu.berkeley.cs186.database.table.RecordId;
-import edu.berkeley.cs186.database.table.RecordIterator;
-import edu.berkeley.cs186.database.table.Schema;
-import edu.berkeley.cs186.database.table.stats.TableStats;
+import edu.umd.cs424.database.BaseTransaction;
+import edu.umd.cs424.database.DatabaseException;
+import edu.umd.cs424.database.LoggingLockManager;
+import edu.umd.cs424.database.common.BacktrackingIterator;
+import edu.umd.cs424.database.databox.DataBox;
+import edu.umd.cs424.database.io.Page;
+import edu.umd.cs424.database.io.PageAllocator.PageIterator;
+import edu.umd.cs424.database.query.QueryPlan;
+import edu.umd.cs424.database.table.Record;
+import edu.umd.cs424.database.table.RecordId;
+import edu.umd.cs424.database.table.RecordIterator;
+import edu.umd.cs424.database.table.Schema;
+import edu.umd.cs424.database.table.stats.TableStats;
 
 /**
  * A dummy transaction class that only supports checking/setting active/blocked

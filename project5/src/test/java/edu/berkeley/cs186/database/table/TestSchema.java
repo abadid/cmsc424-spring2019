@@ -1,4 +1,4 @@
-package edu.berkeley.cs186.database.table;
+package edu.umd.cs424.database.table;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
@@ -7,17 +7,17 @@ import static org.junit.Assert.fail;
 import java.util.Arrays;
 import java.util.List;
 
-import edu.berkeley.cs186.database.categories.*;
+import edu.umd.cs424.database.categories.*;
 import org.junit.Test;
 
-import edu.berkeley.cs186.database.DatabaseException;
-import edu.berkeley.cs186.database.common.ByteBuffer;
-import edu.berkeley.cs186.database.databox.BoolDataBox;
-import edu.berkeley.cs186.database.databox.DataBox;
-import edu.berkeley.cs186.database.databox.FloatDataBox;
-import edu.berkeley.cs186.database.databox.IntDataBox;
-import edu.berkeley.cs186.database.databox.StringDataBox;
-import edu.berkeley.cs186.database.databox.Type;
+import edu.umd.cs424.database.DatabaseException;
+import edu.umd.cs424.database.common.ByteBuffer;
+import edu.umd.cs424.database.databox.BoolDataBox;
+import edu.umd.cs424.database.databox.DataBox;
+import edu.umd.cs424.database.databox.FloatDataBox;
+import edu.umd.cs424.database.databox.IntDataBox;
+import edu.umd.cs424.database.databox.StringDataBox;
+import edu.umd.cs424.database.databox.Type;
 import org.junit.experimental.categories.Category;
 
 @Category({HW99Tests.class, SystemTests.class})

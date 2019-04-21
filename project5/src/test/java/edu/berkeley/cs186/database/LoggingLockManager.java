@@ -1,6 +1,6 @@
-package edu.berkeley.cs186.database;
+package edu.umd.cs424.database;
 
-import edu.berkeley.cs186.database.concurrency.*;
+import edu.umd.cs424.database.concurrency.*;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -1,6 +1,6 @@
-package edu.berkeley.cs186.database.common;
+package edu.umd.cs424.database.common;
 
-import edu.berkeley.cs186.database.categories.*;
+import edu.umd.cs424.database.categories.*;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 

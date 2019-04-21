@@ -1,4 +1,4 @@
-package edu.berkeley.cs186.database.query;
+package edu.umd.cs424.database.query;
 
 public class QueryPlanException extends Exception {
     private String message;

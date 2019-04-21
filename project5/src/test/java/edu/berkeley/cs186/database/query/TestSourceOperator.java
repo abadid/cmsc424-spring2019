@@ -1,14 +1,14 @@
-package edu.berkeley.cs186.database.query;
+package edu.umd.cs424.database.query;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import edu.berkeley.cs186.database.TestUtils;
-import edu.berkeley.cs186.database.categories.*;
-import edu.berkeley.cs186.database.table.Record;
-import edu.berkeley.cs186.database.table.Schema;
-import edu.berkeley.cs186.database.table.stats.TableStats;
+import edu.umd.cs424.database.TestUtils;
+import edu.umd.cs424.database.categories.*;
+import edu.umd.cs424.database.table.Record;
+import edu.umd.cs424.database.table.Schema;
+import edu.umd.cs424.database.table.stats.TableStats;
 import org.junit.experimental.categories.Category;
 
 @Category(HW3Tests.class)

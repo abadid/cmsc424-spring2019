@@ -1,15 +1,15 @@
-package edu.berkeley.cs186.database.index;
+package edu.umd.cs424.database.index;
 
 import java.nio.ByteBuffer;
 import java.util.*;
 
-import edu.berkeley.cs186.database.BaseTransaction;
-import edu.berkeley.cs186.database.common.Buffer;
-import edu.berkeley.cs186.database.common.Pair;
-import edu.berkeley.cs186.database.databox.DataBox;
-import edu.berkeley.cs186.database.databox.Type;
-import edu.berkeley.cs186.database.io.Page;
-import edu.berkeley.cs186.database.table.RecordId;
+import edu.umd.cs424.database.BaseTransaction;
+import edu.umd.cs424.database.common.Buffer;
+import edu.umd.cs424.database.common.Pair;
+import edu.umd.cs424.database.databox.DataBox;
+import edu.umd.cs424.database.databox.Type;
+import edu.umd.cs424.database.io.Page;
+import edu.umd.cs424.database.table.RecordId;
 
 /**
  * A inner node of a B+ tree. Every inner node in a B+ tree of order d stores

@@ -1,12 +1,12 @@
-package edu.berkeley.cs186.database.query;
+package edu.umd.cs424.database.query;
 
 import java.util.Iterator;
 
-import edu.berkeley.cs186.database.Database;
-import edu.berkeley.cs186.database.DatabaseException;
-import edu.berkeley.cs186.database.table.Record;
-import edu.berkeley.cs186.database.table.Schema;
-import edu.berkeley.cs186.database.table.stats.TableStats;
+import edu.umd.cs424.database.Database;
+import edu.umd.cs424.database.DatabaseException;
+import edu.umd.cs424.database.table.Record;
+import edu.umd.cs424.database.table.Schema;
+import edu.umd.cs424.database.table.stats.TableStats;
 
 public class SequentialScanOperator extends QueryOperator {
     private Database.Transaction transaction;

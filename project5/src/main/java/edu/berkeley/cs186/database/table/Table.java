@@ -1,21 +1,21 @@
-package edu.berkeley.cs186.database.table;
+package edu.umd.cs424.database.table;
 
 import java.io.Closeable;
 import java.util.*;
 
-import edu.berkeley.cs186.database.BaseTransaction;
-import edu.berkeley.cs186.database.DatabaseException;
-import edu.berkeley.cs186.database.common.ArrayBacktrackingIterator;
-import edu.berkeley.cs186.database.common.BacktrackingIterator;
-import edu.berkeley.cs186.database.common.Bits;
-import edu.berkeley.cs186.database.common.Buffer;
-import edu.berkeley.cs186.database.concurrency.LockContext;
-import edu.berkeley.cs186.database.concurrency.LockType;
-import edu.berkeley.cs186.database.concurrency.LockUtil;
-import edu.berkeley.cs186.database.databox.DataBox;
-import edu.berkeley.cs186.database.io.Page;
-import edu.berkeley.cs186.database.io.PageAllocator;
-import edu.berkeley.cs186.database.table.stats.TableStats;
+import edu.umd.cs424.database.BaseTransaction;
+import edu.umd.cs424.database.DatabaseException;
+import edu.umd.cs424.database.common.ArrayBacktrackingIterator;
+import edu.umd.cs424.database.common.BacktrackingIterator;
+import edu.umd.cs424.database.common.Bits;
+import edu.umd.cs424.database.common.Buffer;
+import edu.umd.cs424.database.concurrency.LockContext;
+import edu.umd.cs424.database.concurrency.LockType;
+import edu.umd.cs424.database.concurrency.LockUtil;
+import edu.umd.cs424.database.databox.DataBox;
+import edu.umd.cs424.database.io.Page;
+import edu.umd.cs424.database.io.PageAllocator;
+import edu.umd.cs424.database.table.stats.TableStats;
 
 /**
  * # Overview

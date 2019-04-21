@@ -1,10 +1,10 @@
-package edu.berkeley.cs186.database.table;
+package edu.umd.cs424.database.table;
 
 import java.util.Iterator;
 
-import edu.berkeley.cs186.database.BaseTransaction;
-import edu.berkeley.cs186.database.common.BacktrackingIterator;
-import edu.berkeley.cs186.database.DatabaseException;
+import edu.umd.cs424.database.BaseTransaction;
+import edu.umd.cs424.database.common.BacktrackingIterator;
+import edu.umd.cs424.database.DatabaseException;
 
 /**
  * A RecordIterator wraps an Iterator<RecordId> to form an Iterator<Record>.

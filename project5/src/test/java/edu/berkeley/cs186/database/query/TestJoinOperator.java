@@ -1,8 +1,8 @@
-package edu.berkeley.cs186.database.query;
+package edu.umd.cs424.database.query;
 
-import edu.berkeley.cs186.database.Database;
-import edu.berkeley.cs186.database.TimeoutScaling;
-import edu.berkeley.cs186.database.categories.*;
+import edu.umd.cs424.database.Database;
+import edu.umd.cs424.database.TimeoutScaling;
+import edu.umd.cs424.database.categories.*;
 import org.junit.Rule;
 import org.junit.Test;
 
@@ -10,16 +10,16 @@ import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
-import edu.berkeley.cs186.database.DatabaseException;
-import edu.berkeley.cs186.database.TestUtils;
-import edu.berkeley.cs186.database.databox.BoolDataBox;
-import edu.berkeley.cs186.database.databox.DataBox;
-import edu.berkeley.cs186.database.databox.FloatDataBox;
-import edu.berkeley.cs186.database.databox.IntDataBox;
-import edu.berkeley.cs186.database.databox.StringDataBox;
-import edu.berkeley.cs186.database.databox.Type;
-import edu.berkeley.cs186.database.table.Record;
-import edu.berkeley.cs186.database.table.Schema;
+import edu.umd.cs424.database.DatabaseException;
+import edu.umd.cs424.database.TestUtils;
+import edu.umd.cs424.database.databox.BoolDataBox;
+import edu.umd.cs424.database.databox.DataBox;
+import edu.umd.cs424.database.databox.FloatDataBox;
+import edu.umd.cs424.database.databox.IntDataBox;
+import edu.umd.cs424.database.databox.StringDataBox;
+import edu.umd.cs424.database.databox.Type;
+import edu.umd.cs424.database.table.Record;
+import edu.umd.cs424.database.table.Schema;
 
 import org.junit.experimental.categories.Category;
 import org.junit.rules.DisableOnDebug;

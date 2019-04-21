@@ -1,8 +1,8 @@
-package edu.berkeley.cs186.database.table;
+package edu.umd.cs424.database.table;
 
 import java.util.ArrayList;
 
-import edu.berkeley.cs186.database.databox.DataBox;
+import edu.umd.cs424.database.databox.DataBox;
 
 /**
  * An empty record used to delineate groups in the GroupByOperator.

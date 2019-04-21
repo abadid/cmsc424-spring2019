@@ -1,4 +1,4 @@
-package edu.berkeley.cs186.database.databox;
+package edu.umd.cs424.database.databox;
 
 public class DataBoxException extends RuntimeException {
     public DataBoxException() {

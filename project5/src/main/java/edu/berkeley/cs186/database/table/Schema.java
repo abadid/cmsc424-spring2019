@@ -1,4 +1,4 @@
-package edu.berkeley.cs186.database.table;
+package edu.umd.cs424.database.table;
 
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
@@ -6,10 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import edu.berkeley.cs186.database.DatabaseException;
-import edu.berkeley.cs186.database.common.Buffer;
-import edu.berkeley.cs186.database.databox.DataBox;
-import edu.berkeley.cs186.database.databox.Type;
+import edu.umd.cs424.database.DatabaseException;
+import edu.umd.cs424.database.common.Buffer;
+import edu.umd.cs424.database.databox.DataBox;
+import edu.umd.cs424.database.databox.Type;
 
 /**
  * The schema of a table includes the name and type of every one of its

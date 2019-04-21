@@ -3,7 +3,7 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>edu.berkeley.cs186</groupId>
+    <groupId>edu.umd.cs424</groupId>
     <artifactId>database</artifactId>
     <version>1.0-SNAPSHOT</version>
 
@@ -44,7 +44,7 @@
                     </excludes>
                     <trimStackTrace>false</trimStackTrace>
                     <argLine> -Xms16m -Xmx16m </argLine> <!--ADD TEST JVM ARGS HERE i.e '-Xms8m -Xmx8m' to limit memory to 8m -->
-                    <groups>edu.berkeley.cs186.database.categories.Proj${Proj}Tests</groups>
+                    <groups>edu.umd.cs424.database.categories.Proj${Proj}Tests</groups>
                 </configuration>
             </plugin>
         </plugins>
@@ -59,7 +59,7 @@
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-surefire-plugin</artifactId>
                         <configuration>
-                            <excludedGroups>edu.berkeley.cs186.database.categories.HiddenTests,edu.berkeley.cs186.database.categories.SystemTests</excludedGroups>
+                            <excludedGroups>edu.umd.cs424.database.categories.HiddenTests,edu.umd.cs424.database.categories.SystemTests</excludedGroups>
                         </configuration>
                     </plugin>
                 </plugins>
@@ -73,7 +73,7 @@
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-surefire-plugin</artifactId>
                         <configuration>
-                            <excludedGroups>edu.berkeley.cs186.database.categories.PublicTests,edu.berkeley.cs186.database.categories.SystemTests</excludedGroups>
+                            <excludedGroups>edu.umd.cs424.database.categories.PublicTests,edu.umd.cs424.database.categories.SystemTests</excludedGroups>
                         </configuration>
                     </plugin>
                 </plugins>
@@ -87,7 +87,7 @@
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-surefire-plugin</artifactId>
                         <configuration>
-                            <excludedGroups>edu.berkeley.cs186.database.categories.PublicTests,edu.berkeley.cs186.database.categories.HiddenTests</excludedGroups>
+                            <excludedGroups>edu.umd.cs424.database.categories.PublicTests,edu.umd.cs424.database.categories.HiddenTests</excludedGroups>
                         </configuration>
                     </plugin>
                 </plugins>
@@ -101,7 +101,7 @@
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-surefire-plugin</artifactId>
                         <configuration>
-                            <excludedGroups>edu.berkeley.cs186.database.categories.SystemTests</excludedGroups>
+                            <excludedGroups>edu.umd.cs424.database.categories.SystemTests</excludedGroups>
                         </configuration>
                     </plugin>
                 </plugins>
@@ -118,7 +118,7 @@
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-surefire-plugin</artifactId>
                         <configuration>
-                            <excludedGroups>edu.berkeley.cs186.database.categories.SystemTests,edu.berkeley.cs186.database.categories.PublicTests,edu.berkeley.cs186.database.categories.HiddenTests</excludedGroups>
+                            <excludedGroups>edu.umd.cs424.database.categories.SystemTests,edu.umd.cs424.database.categories.PublicTests,edu.umd.cs424.database.categories.HiddenTests</excludedGroups>
                         </configuration>
                     </plugin>
                 </plugins>
