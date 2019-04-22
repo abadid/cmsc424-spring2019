@@ -83,7 +83,7 @@ We will use the hidden tests to evaluate your solution.
 
 In the `table` directory, fill in the classes `Table#RIDPageIterator` and `Table#RIDBlockIterator`. The tests in `TestTable` should pass once this is complete.
 
-*Hint:* To fill in these two iterators, you can start from reading the description of storage format and bitmap in `Table.java`.
+**Hint:** To fill in these two iterators, you can start from reading the description of storage format and bitmap in `Table.java`.
 
 *Note on testing*: If you wish to write your own tests on `Table#RIDBlockIterator`, be careful with using the `Iterator<Page> block, int maxPages` constructor: you have to get a new `Iterator<Page>` if you want to recreate the iterator in the same test.
 
@@ -101,7 +101,7 @@ We sometimes use the words `block` and `page` interchangeably to describe a sing
 The notion of a `block` when discussing join algorithms is different however. A `page` is a single unit of transfer from disc, and a  `block` is one or more `pages`.
 Sometimes BNLJ is also called PNLJ. Similarly, BNLJOptimized is called BNLJ.
 
-*Hint:* BNLJ and BNLJOptimized extend from `JoinOperator`. You should be familiar with this class, it contains some useful methods  which can help you get the different iterators such as `getPageIterator`, `getRecordIterator` and `getBlockIterator`.
+**Hint:** BNLJ and BNLJOptimized extend from `JoinOperator`. You should be familiar with this class, it contains some useful methods  which can help you get the different iterators such as `getPageIterator`, `getRecordIterator` and `getBlockIterator`.
 
 
 ### 3: External Sort
@@ -110,7 +110,7 @@ Complete implementing `SortOperator.java`. The tests in `TestSortOperator` shoul
 
 **Besides when the comments tell you that you can do something in memory, everything else should be streamed. You should not hold more pages in memory at once than the given algorithm says you are allowed to.**
 
-*Hint:* To get numBuffer pages of records at a time, you need to get `PageIterator` by `transaction.getPageIterator`, then pass pageIterator and numBuffers to `transaction.getBlockIterator`.
+**Hint:** To get numBuffer pages of records at a time, you need to get `PageIterator` by `transaction.getPageIterator`, then pass pageIterator and numBuffers to `transaction.getBlockIterator`.
 
 ### 4: Sort Merge Join
 
@@ -118,7 +118,7 @@ Complete implementing `SortMergeOperator.java`. The sort phase of this join shou
 
 In the hidden tests, we may test `SortMergeOperator` independently of `SortOperator` by replacing your sort with the staff solution, so make sure it functions as described.
 
-*Hint:* To merge join two tables, you have to construct two `SortOperator` for them respectively. You might use `LeftRecordComparator` and `RightRecordComparator` to construct them.
+**Hint:** To merge join two tables, you have to construct two `SortOperator` for them respectively. You might use `LeftRecordComparator` and `RightRecordComparator` to construct them.
 
 
 ## Testing
