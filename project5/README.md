@@ -78,11 +78,13 @@ In the `table` directory, fill in the classes `Table#RIDPageIterator` and `Table
 
 ### 2. Nested Loops Joins
 
-Move to the `query` directory. You may first want to take a look at `SNLJOperator`. Complete `BNLJOperator` and `BNLJOptimizedOperator`. The BNLJ and Optimized BNLJ tests in `TestJoinOperator` should pass once this is complete.
+There are three types of join algorithms in the codebase (See section 12.5.2 of the textbook):
 
 - SNLJ: Simple Nested Loop Join
 - BNLJ: Block Nested Loop Join
 - BNLJOptimized: Optimized Block Nested Loop Join
+
+Move to the `query` directory. You may first want to take a look at `SNLJOperator`. Complete `BNLJOperator` and `BNLJOptimizedOperator`. The BNLJ and Optimized BNLJ tests in `TestJoinOperator` should pass once this is complete.
 
 We sometimes use the words `block` and `page` interchangeably to describe a single unit of transfer from disc. 
 The notion of a `block` when discussing join algorithms is different however. A `page` is a single unit of transfer from disc, and a  `block` is one or more `pages`.
@@ -97,7 +99,7 @@ Complete implementing `SortOperator.java`. The tests in `TestSortOperator` shoul
 
 **Besides when the comments tell you that you can do something in memory, everything else should be streamed. You should not hold more pages in memory at once than the given algorithm says you are allowed to.**
 
-*Hint:* To sort records in a table, you have to get `Iterator<Record>` via `getBlockIterator`.
+*Hint:* To get numBuffer pages of records at a time, you need to get `PageIterator` by `transaction.getPageIterator`, then pass pageIterator and numBuffers to `transaction.getBlockIterator`.
 
 ### 4: Sort Merge Join
 
@@ -105,7 +107,7 @@ Complete implementing `SortMergeOperator.java`. The sort phase of this join shou
 
 In the hidden tests, we may test `SortMergeOperator` independently of `SortOperator` by replacing your sort with the staff solution, so make sure it functions as described.
 
-*Hint:* To merge join two tables, you have to construct two `SortOpertor` for them respectively.
+*Hint:* To merge join two tables, you have to construct two `SortOperator` for them respectively. You might use `LeftRecordComparator` and `RightRecordComparator` to construct them.
 
 
 ## Testing
