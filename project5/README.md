@@ -13,7 +13,7 @@ Or if you don't want to use IDE, you can also do the same thing through command 
     brew install maven
     cd project5
     # build code without testing
-    mvn package -Pdist -DskipTests
+    mvn compile
 ```
 
 ## The Project Files
@@ -125,3 +125,12 @@ mvn clean test -D Proj=5
 
 ## Submitting
 
+Just submit the following files to ELMS.
+
+```bash
+├── Table.java
+├── BNLJOperator.java
+├── BNLJOptimizedOperator.java
+├── SortMergeOperator.java
+└── SortOperator.java
+```
