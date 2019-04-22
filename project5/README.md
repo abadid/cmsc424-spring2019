@@ -88,6 +88,8 @@ We sometimes use the words `block` and `page` interchangeably to describe a sing
 The notion of a `block` when discussing join algorithms is different however. A `page` is a single unit of transfer from disc, and a  `block` is one or more `pages`.
 Sometimes BNLJ is also called PNLJ. Similarly, BNLJOptimized is called BNLJ.
 
+*Hint:* BNLJ and BNLJOptimized extend from `JoinOperator`. You should be familiar with this class, it contains some useful methods  which can help you get the different iterators such as `getPageIterator`, `getRecordIterator` and `getBlockIterator`.
+
 
 ### 3: External Sort
 
