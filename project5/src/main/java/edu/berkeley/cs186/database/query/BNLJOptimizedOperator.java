@@ -79,6 +79,10 @@ public class BNLJOptimizedOperator extends JoinOperator {
             throw new UnsupportedOperationException("TODO(Project 5): implement");
         }
 
+        private void fetchNextRecord() throws DatabaseException {
+            throw new UnsupportedOperationException("TODO(Project 5): implement");
+        }
+
         /**
          * Checks if there are more record(s) to yield
          *
