@@ -112,7 +112,7 @@ We will use the hidden tests to evaluate your solution.
 
 In the `table` directory, fill in the classes `Table#RIDPageIterator` and `Table#RIDBlockIterator`. The tests in `TestTable` should pass once this is complete.
 
-**Hint:** To fill in these two iterators, you can start from reading the description of storage format and bitmap in `Table.java`.
+**Hint:** To fill in these two iterators, you can start from reading the description of storage format and bitmap in [Table.java#L22-L95](https://github.com/abadid/cmsc424-spring2019/blob/77c6580914f913b5c4e7684cf31210f2cef89548/project5/src/main/java/edu/umd/cs424/database/table/Table.java#L22-L95).
 
 *Note on testing*: If you wish to write your own tests on `Table#RIDBlockIterator`, be careful with using the `Iterator<Page> block, int maxPages` constructor: you have to get a new `Iterator<Page>` if you want to recreate the iterator in the same test.
 
