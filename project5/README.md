@@ -73,7 +73,7 @@ You need to implement all unsupported operatons which are marked by:
 throw new UnsupportedOperationException("TODO(Project 5): implement");
 ```
 
-If not, as shown in the following figure, tests cannot be passed.
+If not, tests cannot be passed as follows.
 
 ```bash
 [ERROR] Errors: 
