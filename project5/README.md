@@ -18,12 +18,12 @@ Or if you don't want to use IDE, you can also do the same thing through command 
 
 ## The Project Files
 
-In the `src/main/java/edu/berkeley/cs186/database` directory, you will find all of the
+In the `src/main/java/edu/umd/cs424/database` directory, you will find all of the
 code we have provided to you.
 
 ### Getting Familiar with the Release Code
 
-Navigate to the `src/main/java/edu/berkeley/cs186/database` directory. You
+Navigate to the `src/main/java/edu/umd/cs424/database` directory. You
 will find six directories: `common`, `databox`, `io`, `table`, `index`, and `query`, and two files, `Database` and `DatabaseException`.
 You do not have to deeply understand all of the code, but it's worth becoming a little
 familiar with it. **In this assignment, though, you may only modify files in
@@ -112,7 +112,7 @@ In the hidden tests, we may test `SortMergeOperator` independently of `SortOpera
 
 ## Testing
 
-In the `src/test/java/edu/berkeley/cs186/database` directory, you will find all of the
+In the `src/test/java/edu/umd/cs424/database` directory, you will find all of the
 unit tests we have provided to you.
 
 Remember the test cases we give you are not comprehensive, so you should write your own tests to further test your code and catch edge cases.
