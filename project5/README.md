@@ -67,6 +67,17 @@ The `query` directory contains what are called query operators. These are operat
 
 ## Your Tasks
 
+You need to implement all unsupported operatons which are marked by:
+
+```java
+throw new UnsupportedOperationException("TODO(Project 5): implement");
+```
+
+If not, as shown in the following figure, tests cannot be passed.
+
+![](proj5-testoutput.jpeg)
+
+We will use the hidden tests to evaluate your solution.
 
 ### 1. Table Iterators
 
