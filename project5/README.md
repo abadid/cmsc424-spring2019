@@ -147,7 +147,7 @@ Complete implementing `SortMergeOperator.java`. The sort phase of this join shou
 
 In the additional tests we run on your codebase, we may test `SortMergeOperator` independently of `SortOperator` by replacing your sort with the staff solution, so make sure it functions as described.
 
-**Hint:** To merge join two tables, you have to construct two `SortOperator` for them respectively. You might use `LeftRecordComparator` and `RightRecordComparator` to construct them.
+**Hint:** To merge join two tables, you have to construct two `SortOperator`s for them respectively. You may use `LeftRecordComparator` and `RightRecordComparator` to construct them.
 
 
 ## Testing
