@@ -145,7 +145,7 @@ Complete implementing `SortOperator.java`. The tests in `TestSortOperator` shoul
 
 Complete implementing `SortMergeOperator.java`. The sort phase of this join should use your previously implemented `SortOperator#sort` method. Note that we do not do the optimization discussed in lecture where the join happens during the last pass of sorting the two tables. We keep the sort phase completely separate from the join phase. The SortMerge tests in `TestJoinOperator` should pass once this is complete.
 
-In the hidden tests, we may test `SortMergeOperator` independently of `SortOperator` by replacing your sort with the staff solution, so make sure it functions as described.
+In the additional tests we run on your codebase, we may test `SortMergeOperator` independently of `SortOperator` by replacing your sort with the staff solution, so make sure it functions as described.
 
 **Hint:** To merge join two tables, you have to construct two `SortOperator` for them respectively. You might use `LeftRecordComparator` and `RightRecordComparator` to construct them.
 
