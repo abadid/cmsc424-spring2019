@@ -1,12 +1,12 @@
-# Project 5: Iterators and Join Algorithms
+# Project 5: Implementing Join Algorithms
 
 ## Environment
 
-We will not be using the virtual machine environment that we've been using for the other projects thus far this semester, since this is a pure Java project. We highly recommend you install Java 8 and use an IDE like Eclipse for this project. (Here is a link to Java 8 downloads: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+We will be using the same environment as the previous project (project 4), since this project is based on the same Berkeley database system code base. You should have already installed Java 8 and an IDE like Eclipse for project 4, but in case for some reason you didn't, it is recommended that you do so for this project. (Here is a link to Java 8 downloads: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 
 We will be using `Maven` to run the tests. If you can import the code as a Maven project in your IDE and run your unit tests successfully, you do not need to install Maven on your local computer. Most IDEs should provide this functionality by default. For example, in Eclipse, you can do this: `File > import > maven > existing maven project`.
 
-Or if you don't want to use IDE, you can also do the same thing through command lines:
+Or if you don't want to use an IDE, you can do the same thing through a command line interface:
 
 ```bash
     # use MacBook
@@ -106,7 +106,7 @@ If not, tests cannot be passed as follows.
 [INFO] ------------------------------------------------------------------------
 ```
 
-We will use the hidden tests to evaluate your solution.
+We plan to use additional tests to evaluate your solution (in addition to the ones we are providing with this codebase).
 
 ### 1. Table Iterators
 
@@ -145,9 +145,9 @@ Complete implementing `SortOperator.java`. The tests in `TestSortOperator` shoul
 
 Complete implementing `SortMergeOperator.java`. The sort phase of this join should use your previously implemented `SortOperator#sort` method. Note that we do not do the optimization discussed in lecture where the join happens during the last pass of sorting the two tables. We keep the sort phase completely separate from the join phase. The SortMerge tests in `TestJoinOperator` should pass once this is complete.
 
-In the hidden tests, we may test `SortMergeOperator` independently of `SortOperator` by replacing your sort with the staff solution, so make sure it functions as described.
+In the additional tests we run on your codebase, we may test `SortMergeOperator` independently of `SortOperator` by replacing your sort with the staff solution, so make sure it functions as described.
 
-**Hint:** To merge join two tables, you have to construct two `SortOperator` for them respectively. You might use `LeftRecordComparator` and `RightRecordComparator` to construct them.
+**Hint:** To merge join two tables, you have to construct two `SortOperator`s for them respectively. You may use `LeftRecordComparator` and `RightRecordComparator` to construct them.
 
 
 ## Testing
