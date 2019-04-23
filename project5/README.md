@@ -106,7 +106,7 @@ If not, tests cannot be passed as follows.
 [INFO] ------------------------------------------------------------------------
 ```
 
-We will use the hidden tests to evaluate your solution.
+We plan to use additional tests to evaluate your solution (in addition to the ones we are providing with this codebase).
 
 ### 1. Table Iterators
 
