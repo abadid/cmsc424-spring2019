@@ -13,3 +13,4 @@
 # Vagrant hidden folder
 .vagrant/
 /.metadata/
+target
