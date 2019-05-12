@@ -67,8 +67,10 @@ cat <<EOF
 ============================================
 EOF
 
+rm -rf $SUBMISSION_DIR/grades.txt 
+
 IFS=$'\n'
-for $filename in $(ls $SUBMISSION_DIR/logs)
+for filename in $(ls $SUBMISSION_DIR/logs)
 do
     tests=$(cat $SUBMISSION_DIR/logs/$filename | grep "Tests run:" \
     | tail -1 | sed 's/[^[:digit:]]/ /g; s/  */ /; s/^  *//' | awk '{print $1}')
@@ -76,7 +78,7 @@ do
     | tail -1 | sed 's/[^[:digit:]]/ /g; s/  */ /; s/^  *//' | awk '{print $2}')
     errors=$(cat $SUBMISSION_DIR/logs/$filename | grep "Tests run:" \
     | tail -1 | sed 's/[^[:digit:]]/ /g; s/  */ /; s/^  *//' | awk '{print $3}')
-    grade=$("scale=3 ; (($tests - $failures - $errors) / $tests) * 100" | bc)
+    grade=$(echo "scale=3 ; (($tests - $failures - $errors) / $tests) * 100" | bc)
     username=$(echo "$filename" | cut -f 1 -d '.')
     echo -e "$username\t$grade" >> "$SUBMISSION_DIR/grades.txt"
 done
