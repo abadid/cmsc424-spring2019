@@ -1,7 +1,6 @@
 #!/bin/sh
 
 SUBMISSION_DIR=~/Desktop/submissions/
-mkdir -p $SUBMISSION_DIR/logs
 
 ls $SUBMISSION_DIR > tmp1.txt
 ls $SUBMISSION_DIR | sed 's/_/ /g' | awk '{ print $1, $NF }' > tmp2.txt
@@ -13,7 +12,7 @@ do
 done
 rm -rf tmp1.txt tmp2.txt 
 
-
+mkdir -p $SUBMISSION_DIR/logs
 cat <<EOF
 ============================================
 [Script] Run Tests and Generate Logs ...
@@ -78,9 +77,16 @@ do
     | tail -1 | sed 's/[^[:digit:]]/ /g; s/  */ /; s/^  *//' | awk '{print $2}')
     errors=$(cat $SUBMISSION_DIR/logs/$filename | grep "Tests run:" \
     | tail -1 | sed 's/[^[:digit:]]/ /g; s/  */ /; s/^  *//' | awk '{print $3}')
-    grade=$(echo "scale=3 ; (($tests - $failures - $errors) / $tests) * 100" | bc)
-    username=$(echo "$filename" | cut -f 1 -d '.')
-    echo -e "$username\t$grade" >> "$SUBMISSION_DIR/grades.txt"
+
+    if [[ -z "$tests" ]];then
+        grade="0.00"
+        username=$(echo "$filename" | cut -f 1 -d '.')
+        echo -e "$username\t$grade" >> "$SUBMISSION_DIR/grades.txt"
+    else
+        grade=$(echo "scale=3 ; (($tests - $failures - $errors) / $tests) * 100" | bc)
+        username=$(echo "$filename" | cut -f 1 -d '.')
+        echo -e "$username\t$grade" >> "$SUBMISSION_DIR/grades.txt"
+    fi
 done
 
 cat <<EOF
